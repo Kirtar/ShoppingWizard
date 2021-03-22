@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+:root {
+  --line-border-fill: #3498db;
+  --line-border-empty: #e0e0e0;
+}
+
 body {
   margin: 0 auto;
   width: 100%;
@@ -13,9 +18,10 @@ body {
   background: bisque;
 }
 
-body > footer,
-section {
-  background: white;
+body > main {
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 body > main > section {
@@ -53,7 +59,7 @@ picture {
   min-width: 300px;
 }
 
-body > main > aside {
+body > main > section > aside {
   width: 50%;
   min-width: 300px;
 }
@@ -75,4 +81,102 @@ body > main > aside {
   background-color: aquamarine;
   height: 50px;
   border: 2px solid blue;
+}
+
+.container {
+  text-align: center;
+  margin-top: 5%;
+  width: 100%;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 30px;
+  max-width: 100%;
+  width: 90%;
+  margin: auto;
+}
+
+.circle-title {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    max-width: 100%;
+    width: 93%;
+    margin: auto;
+    font-weight: bold;
+  }
+
+.progress-container::before {
+  content: ""; /* Mandatory with ::before */
+  background-color: var(--line-border-empty);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  z-index: -1;
+}
+
+.progress {
+  background-color: var(--line-border-fill);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 0%;
+  z-index: -1;
+  transition: 0.4s ease;
+}
+
+.circle {
+  background-color: #fff;
+  color: #999;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--line-border-empty);
+  transition: 0.4s ease;
+}
+
+.circle.active {
+  border-color: var(--line-border-fill);
+  background-color: var(--line-border-fill);
+}
+
+.btn {
+  background-color: var(--line-border-fill);
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 8px 30px;
+  margin: 5px;
+  margin-top: 5%;
+  font-size: 14px;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn:disabled {
+  background-color: var(--line-border-empty);
+  cursor: not-allowed;
+}
+
+#top_section {
+  width: 100%;
 }

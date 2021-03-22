@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,13 +8,36 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
+
 <body>
     <header>logo</header>
     <main>
+        <section id="top_section"></section>
         <section id="left_section"></section>
         <section id="right_section"></section>
     </main>
 
+    <template id="progressBar">
+        <div class="container">
+            <div class="circle-title">
+                <p>Profile</p>
+                <p>Address</p>
+                <p>Shipping</p>
+                <p>Finish</p>
+            </div>
+            <div class="progress-container">
+                <div class="progress" id="progress"></div>
+                <div class="circle active"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+        </div>
+        <div class="btn-container">
+            <button class="btn" id="prev" disabled>Prev</button>
+            <button class="btn" id="next">Next</button>
+        </div>
+    </template>
     <template id="productCard">
         <picture>
             <div class="mainProductImage">MAIN</div>
@@ -57,9 +81,15 @@
                 <div class="cartImage">Image</div>
                 <div class="cartDetails">
                     <h1>Basic t-shirt</h1>
-                    <p>Size<div>M</div></p>
-                    <p>Color<div>tomato</div></p>
-                    <p>Price: <div>15€</div></p>
+                    <p>Size
+                    <div>M</div>
+                    </p>
+                    <p>Color
+                    <div>tomato</div>
+                    </p>
+                    <p>Price:
+                    <div>15€</div>
+                    </p>
                 </div>
             </div>
         </picture>
@@ -133,9 +163,15 @@
     <template id="finishPage">
         <aside class="mainProductContent">
             <h1>Your order</h1>
-            <p>T-Shirt<div>XX€</div></p>
-            <p>XXX Shipping<div>XX€</div></p>
-            <p>Total: <div>YY€</div></p>
+            <p>T-Shirt
+            <div>XX€</div>
+            </p>
+            <p>XXX Shipping
+            <div>XX€</div>
+            </p>
+            <p>Total:
+            <div>YY€</div>
+            </p>
             <p><strong>Your order will arrive:</strong></p>
             <p>Estimated delivery date</p>
             <p>`Beetween <strong> ${initialDate}</strong> and <strong> ${finalDate}.</strong>`</p>
@@ -156,6 +192,9 @@
 </body>
 
 <script>
+    let topTemplate = document.getElementById('progressBar');
+    let topTemplateContent = topTemplate.content;
+    document.getElementById('top_section').appendChild(topTemplateContent);
     let leftTemplate = document.getElementById('productCard');
     let leftTemplateContent = leftTemplate.content;
     document.getElementById('left_section').appendChild(leftTemplateContent);
@@ -163,4 +202,5 @@
     let rightTemplateContent = rightTemplate.content;
     document.getElementById('right_section').appendChild(rightTemplateContent);
 </script>
+<script src="progressBarControl.js"></script>
 </html>
