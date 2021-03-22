@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>logo</header>
+    <main>
+        <section id="left_section"></section>
+        <section id="right_section"></section>
+    </main>
+
+    <template id="productCard">
+        <picture>
+            <div class="mainProductImage">MAIN</div>
+            <div class="smallList">
+                <div class="smallProductImage">small</div>
+                <div class="smallProductImage">small</div>
+                <div class="smallProductImage">small</div>
+                <div class="smallProductImage">small</div>
+            </div>
+        </picture>
+    </template>
+
+    <template id="mainPage">
+        <aside class="mainProductContent">
+            <h1>Basic Black</h1>
+            <p>Price</p>
+            <p>12€</p>
+            <p>Size:</p>
+            <select name="" id="">
+                <option value="">XS</option>
+                <option value="">S</option>
+                <option value="">M</option>
+                <option value="">L</option>
+                <option value="">XL</option>
+            </select>
+            <p>Color Picker:</p>
+            <div>
+                <img src="" alt="">
+                <img src="" alt="">
+                <img src="" alt="">
+                <img src="" alt="">
+                <img src="" alt="">
+            </div>
+            <button>BUY</button>
+        </aside>
+    </template>
+
+    <template id="shoppingCart">
+        <picture>
+            <div class="shoppingCart">
+                <div class="cartImage">Image</div>
+                <div class="cartDetails">
+                    <h1>Basic t-shirt</h1>
+                    <p>Size<div>M</div></p>
+                    <p>Color<div>tomato</div></p>
+                    <p>Price: <div>25€</div></p>
+                </div>
+            </div>
+        </picture>
+    </template>
+
+    <template id="profilePage">
+        <aside class="mainProductContent">
+            <label>First Name:</label><br>
+            <input type="text" id="firstName" value=""><br>
+            <label>Last Name:</label><br>
+            <input type="text" id="lastName" value=""><br><br>
+            <label>Birthday:</label><br>
+            <input type="date" id="birthday" value=""><br>
+            <label>Phone:</label><br>
+            <input type="text" id="phone" value=""><br><br>
+            <label>Address 1:</label><br>
+            <input type="text" id="address1" value=""><br>
+            <label>Address 2:</label><br>
+            <input type="text" id="address2" value=""><br><br>
+            <label>Post Code:</label><br>
+            <input type="text" id="postCode" value=""><br>
+            <label>Country:</label><br>
+            <input type="text" id="country" value=""><br><br>
+        </aside>
+    </template>
+
+    <template id="addressPage">
+        <aside class="mainProductContent">
+            <label>Username:</label><br>
+            <input type="text" id="username" value=""><br>
+            <label>Email:</label><br>
+            <input type="text" id="email" value=""><br><br>
+            <label>Password:</label><br>
+            <input type="password" id="password" value=""><br>
+            <label>Confirm password:</label><br>
+            <input type="password" id="confirmPassword" value=""><br><br>
+        </aside>
+    </template>
+
+    <template id="shippingPage">
+        <aside class="mainProductContent">
+            <input type="radio" id="freeShipment" name="shipment" value="freeShipment">
+            <label>Free Shipment 72h</label><br>
+            <input type="radio" id="extraShipment" name="shipment" value="extraShipment">
+            <label>Extra Shipment 48h</label><br>
+            <input type="radio" id="premiumShipment" name="shipment" value="premiumShipment">
+            <label>Premium Shipment 24h</label>
+            <div class="estimatedDeliveryDate">
+                <p><strong>Your order will arrive:</strong></p>
+                <p>Estimated delivery date</p>
+                <p>`Between <strong> ${initialDate}</strong> and <strong> ${finalDate}.</strong>`</p>
+            </div>
+            <input type="checkbox" id="isAGift" name="isAGift" value="isAGift">
+            <label>Is it a gift?</label>
+            <h3>Gift message</h3>
+            <textarea id="w3review" name="w3review" rows="4" cols="50">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </textarea>
+            <h3>Gift wrapper image</h3>
+            <input type="file" id="giftImage" name="giftImage" value="giftImage">
+        </aside>
+    </template>
+
+    <template id="orderCongrats">
+        <div id="orderCongrats">
+            <h1>Your order is complete!</h1>
+            <h3>Thank you for your order</h3>
+        </div>
+    </template>
+
+    <template id="finishPage">
+        <aside class="mainProductContent">
+            <h1>Your order</h1>
+            <p>T-Shirt<div>XX€</div></p>
+            <p>XXX Shipping<div>XX€</div></p>
+            <p>Total: <div>YY€</div></p>
+            <p><strong>Your order will arrive:</strong></p>
+            <p>Estimated delivery date</p>
+            <p>`Beetween <strong> ${initialDate}</strong> and <strong> ${finalDate}.</strong>`</p>
+            <input type="checkbox" id="termsCheckbox" name="termsCheckbox" value="termsCheckbox">
+            <label>I have read and accept the terms and conditions</label>
+            <div id="termsAlert">Please accept the terms and condicions</div>
+            <input type="button" value="Buy now">
+        </aside>
+    </template>
+
+    <template class="navigationButtons">
+        <input type="button" value="clearButton">
+        <input type="button" value="nextButton">
+    </template>
+
+    <footer>footer</footer>
+
+</body>
+
+<script>
+    let leftTemplate = document.getElementById('productCard');
+    let leftTemplateContent = leftTemplate.content;
+    document.getElementById('left_section').appendChild(leftTemplateContent);
+    let rightTemplate = document.getElementById('mainPage');
+    let rightTemplateContent = rightTemplate.content;
+    document.getElementById('right_section').appendChild(rightTemplateContent);
+</script>
+</html>

@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  width: 100%;
+  font-weight: normal;
+  background: bisque;
+}
+
+body > footer,
+section {
+  background: white;
+}
+
+body > main > section {
+  width: 50%;
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+main > section > picture {
+  width: 50%;
+  background: tomato;
+}
+
+header {
+  width: 100%;
+  min-height: 100px;
+  background-color: aqua;
+}
+
+footer {
+  width: 100%;
+  min-height: 100px;
+  background-color: aqua;
+}
+
+section {
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  padding: 0% 10%;
+}
+
+picture {
+  width: 50%;
+  min-width: 300px;
+}
+
+body > main > aside {
+  width: 50%;
+  min-width: 300px;
+}
+
+.smallList {
+  width: 100%;
+  display: inline-flex;
+}
+
+.mainProductImage {
+  background-color: tomato;
+  width: 100%;
+  height: 200px;
+}
+
+.smallProductImage {
+  width: 25%;
+  border: 2px 2px 2px 2px;
+  background-color: aquamarine;
+  height: 50px;
+  border: 2px solid blue;
+}
