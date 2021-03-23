@@ -65,7 +65,7 @@
         </picture>
     </template>
 
-    <template id="profilePage">
+    <template id="addressPage">
         <aside class="mainProductContent">
             <label>First Name:</label><br>
             <input type="text" id="firstName" value=""><br>
@@ -86,16 +86,22 @@
         </aside>
     </template>
 
-    <template id="addressPage">
+    <template id="profilePage">
         <aside class="mainProductContent">
-            <label>Username:</label><br>
-            <input type="text" id="username" value=""><br>
-            <label>Email:</label><br>
-            <input type="text" id="email" value=""><br><br>
-            <label>Password:</label><br>
-            <input type="password" id="password" value=""><br>
-            <label>Confirm password:</label><br>
-            <input type="password" id="confirmPassword" value=""><br><br>
+            <form action="">
+                <label for="username">Username:</label><br>
+                <input type="text" name="username" id="username" value="">
+                <p id="userNameAlert" style="display:none;color:red">El username no debe contener espacios y debe tener una longitud comprendida entre 5 y 20 carácteres</p><br>
+                <label for="email">Email:</label><br>
+                <input type="email" name="email" id="email" value="">
+                <p id="emailAlert" style="display:none;color:red">No es un email válido</p><br><br>
+                <label for="password">Password:</label><br>
+                <input type="password" name="password" id="password" value="">
+                <p id="passAlert" style="display:none;color:red">La contraseña debe contener mayúsculas, minúsculas, números y caracteres especiales</p><br>
+                <label for="confirmPassword">Confirm password:</label><br>
+                <input type="password" name="confirmPassword" id="confirmPassword" value="">
+                <p id="confirmPassAlert" style="display:none;color:red">Las contraseñas no coinciden</p><br><br>
+            </form>
         </aside>
     </template>
 
@@ -159,8 +165,9 @@
     let leftTemplate = document.getElementById('productCard');
     let leftTemplateContent = leftTemplate.content;
     document.getElementById('left_section').appendChild(leftTemplateContent);
-    let rightTemplate = document.getElementById('mainPage');
+    let rightTemplate = document.getElementById('profilePage');
     let rightTemplateContent = rightTemplate.content;
     document.getElementById('right_section').appendChild(rightTemplateContent);
 </script>
+<script src="script.js"></script>
 </html>
