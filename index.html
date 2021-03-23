@@ -2,19 +2,29 @@
 <html lang="en">
 
 <head>
+    <title>ShoppingWizard</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <title>Document</title>
 </head>
 
 <body>
-    <header>logo</header>
+    <header>
+        <img src="./images/logo.jpeg">
+    </header>
     <main>
         <section id="top_section"></section>
         <section id="left_section"></section>
         <section id="right_section"></section>
+        <section id="top_section2"></section>
+        <section id="left_section2"></section>
+        <section id="right_section2"></section>
+        <section id="top_section3"></section>
+        <section id="left_section3"></section>
+        <section id="right_section3"></section>
     </main>
 
     <template id="progressBar">
@@ -40,7 +50,9 @@
     </template>
     <template id="productCard">
         <picture>
-            <div class="mainProductImage">MAIN</div>
+            <div class="mainProductImage">
+                <img src='./images/black.jpeg'>
+            </div>
             <div class="smallList">
                 <div class="smallProductImage">small</div>
                 <div class="smallProductImage">small</div>
@@ -49,20 +61,22 @@
             </div>
         </picture>
     </template>
-
     <template id="mainPage">
         <aside class="mainProductContent">
             <h1>Basic Black</h1>
             <p>Price</p>
             <p>12€</p>
-            <p>Size:</p>
-            <select name="" id="">
-                <option value="">XS</option>
-                <option value="">S</option>
-                <option value="">M</option>
-                <option value="">L</option>
-                <option value="">XL</option>
-            </select>
+            <div style="display: inline-flex;">
+                <p>Size:</p>
+                <select name="" id="">
+                    <option value="">XS</option>
+                    <option value="">S</option>
+                    <option value="">M</option>
+                    <option value="">L</option>
+                    <option value="">XL</option>
+                </select>
+                </div>
+            </div>
             <p>Color Picker:</p>
             <div>
                 <img src="" alt="">
@@ -71,11 +85,13 @@
                 <img src="" alt="">
                 <img src="" alt="">
             </div>
-            <button>BUY</button>
+            <input type="submit" class ="buyNowButton" value="BUY">
         </aside>
     </template>
 
     <template id="shoppingCart">
+        <p>Your Product description</p>
+        <hr/>
         <picture>
             <div class="shoppingCart">
                 <div class="cartImage">Image</div>
@@ -96,6 +112,8 @@
     </template>
 
     <template id="profilePage">
+        <p>User profile information</p>
+        <hr/>
         <aside class="mainProductContent">
             <form action="">
                 <label for="username">Username:</label><br>
@@ -115,6 +133,8 @@
     </template>
 
     <template id="addressPage">
+        <p>User address information</p>
+        <hr/>
         <aside class="mainProductContent">
             <form action="">
                 <label for="firstName">First Name:</label><br>
@@ -157,10 +177,11 @@
                 <label for="checkAddress">This is my regular address.</label>
                 <input type="checkbox" id="checkAddress" name="checkAddress" value="acceptAddress">
             </form>
-        </aside>
     </template>
 
     <template id="shippingPage">
+        <p>Shipping information</p>
+        <hr/>
         <aside class="mainProductContent">
             <input type="radio" id="freeShipment" name="shipment" value="freeShipment">
             <label>Free Shipment 72h</label><br>
@@ -209,7 +230,7 @@
             <input type="checkbox" id="termsCheckbox" name="termsCheckbox" value="termsCheckbox">
             <label>I have read and accept the terms and conditions</label>
             <div id="termsAlert">Please accept the terms and condicions</div>
-            <input type="button" value="Buy now">
+            <input type="submit" class ="buyNowButton" value="Buy now">
         </aside>
     </template>
 
@@ -232,6 +253,23 @@
     let rightTemplate = document.getElementById('addressPage');
     let rightTemplateContent = rightTemplate.content;
     document.getElementById('right_section').appendChild(rightTemplateContent);
+
+
+    let leftTemplate2 = document.getElementById('shoppingCart');
+    let leftTemplateContent2 = leftTemplate2.content;
+    document.getElementById('left_section2').appendChild(leftTemplateContent2);
+    let rightTemplate2 = document.getElementById('shippingPage');
+    let rightTemplateContent2 = rightTemplate2.content;
+    document.getElementById('right_section2').appendChild(rightTemplateContent2);
+    let leftTemplate3 = document.getElementById('addressPage');
+    let leftTemplateContent3 = leftTemplate3.content;
+    document.getElementById('left_section3').appendChild(leftTemplateContent3);
+    let rightTemplate3 = document.getElementById('finishPage');
+    let rightTemplateContent3 = rightTemplate3.content;
+    document.getElementById('right_section3').appendChild(rightTemplateContent3);
+
+
 </script>
-<script src="addressControl.js"></script>
+<script src="script.js"></script>
+<script src="progressBarControl.js"></script>
 </html>
