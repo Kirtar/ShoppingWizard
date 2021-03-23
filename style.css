@@ -4,18 +4,42 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  font-family: "Montserrat";
+}
+:root {
+  --basicBlue: #3498db;
+  --basicGrey: #e0e0e0;
+  --lightBlue: #d0e8ff;
 }
 
-:root {
-  --line-border-fill: #3498db;
-  --line-border-empty: #e0e0e0;
+textarea {
+  resize: none;
+}
+
+label {
+  font-weight: bold;
+  font-size: large;
+}
+
+input {
+  border-radius: 5px;
+  background-color: var(--lightBlue);
+  padding: 4% 3%;
+  border: 0;
+  font-size: medium;
+}
+
+.buyNowButton {
+  background: var(--basicBlue);
+  padding: 8px 30px;
+  color: #fff;
+  font-size: small;
 }
 
 body {
   margin: 0 auto;
   width: 100%;
   font-weight: normal;
-  background: bisque;
 }
 
 body > main {
@@ -32,19 +56,22 @@ body > main > section {
 
 main > section > picture {
   width: 50%;
-  background: tomato;
+  background: lightgray;
 }
 
 header {
+  margin: auto;
+  padding: 0;
+  vertical-align: middle;
   width: 100%;
   min-height: 100px;
-  background-color: aqua;
+  background-color: black;
 }
 
 footer {
   width: 100%;
   min-height: 100px;
-  background-color: aqua;
+  background-color: darkgray;
 }
 
 section {
@@ -64,15 +91,21 @@ body > main > section > aside {
   min-width: 300px;
 }
 
+hr {
+  height: 5px;
+  width: 30%;
+  border: 0;
+  background-color: var(--basicBlue);
+}
+
 .smallList {
   width: 100%;
   display: inline-flex;
 }
 
 .mainProductImage {
-  background-color: tomato;
-  width: 100%;
-  height: 200px;
+  /*width: 50%;
+  height: 50%;*/
 }
 
 .smallProductImage {
@@ -100,18 +133,18 @@ body > main > section > aside {
 }
 
 .circle-title {
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    max-width: 100%;
-    width: 93%;
-    margin: auto;
-    font-weight: bold;
-  }
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  max-width: 100%;
+  width: 93%;
+  margin: auto;
+  font-weight: bold;
+}
 
 .progress-container::before {
   content: ""; /* Mandatory with ::before */
-  background-color: var(--line-border-empty);
+  background-color: var(--basicGrey);
   position: absolute;
   top: 50%;
   left: 0;
@@ -122,7 +155,7 @@ body > main > section > aside {
 }
 
 .progress {
-  background-color: var(--line-border-fill);
+  background-color: var(--basicBlue);
   position: absolute;
   top: 50%;
   left: 0;
@@ -142,38 +175,37 @@ body > main > section > aside {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 3px solid var(--line-border-empty);
+  border: 3px solid var(--basicGrey);
   transition: 0.4s ease;
 }
 
 .circle.active {
-  border-color: var(--line-border-fill);
-  background-color: var(--line-border-fill);
+  border-color: var(--basicBlue);
+  background-color: var(--basicBlue);
 }
 
-.btn {
-  background-color: var(--line-border-fill);
+button {
+  background-color: var(--basicBlue);
   color: #fff;
   border: 0;
   border-radius: 6px;
   cursor: pointer;
   font-family: inherit;
   padding: 8px 30px;
-  margin: 5px;
   margin-top: 5%;
   font-size: 14px;
 }
 
-.btn:active {
+button:active {
   transform: scale(0.98);
 }
 
-.btn:focus {
+button:focus {
   outline: 0;
 }
 
-.btn:disabled {
-  background-color: var(--line-border-empty);
+button:disabled {
+  background-color: var(--basicGrey);
   cursor: not-allowed;
 }
 
