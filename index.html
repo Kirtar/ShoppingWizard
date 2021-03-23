@@ -95,27 +95,6 @@
         </picture>
     </template>
 
-    <template id="addressPage">
-        <aside class="mainProductContent">
-            <label>First Name:</label><br>
-            <input type="text" id="firstName" value=""><br>
-            <label>Last Name:</label><br>
-            <input type="text" id="lastName" value=""><br><br>
-            <label>Birthday:</label><br>
-            <input type="date" id="birthday" value=""><br>
-            <label>Phone:</label><br>
-            <input type="text" id="phone" value=""><br><br>
-            <label>Address 1:</label><br>
-            <input type="text" id="address1" value=""><br>
-            <label>Address 2:</label><br>
-            <input type="text" id="address2" value=""><br><br>
-            <label>Post Code:</label><br>
-            <input type="text" id="postCode" value=""><br>
-            <label>Country:</label><br>
-            <input type="text" id="country" value=""><br><br>
-        </aside>
-    </template>
-
     <template id="profilePage">
         <aside class="mainProductContent">
             <form action="">
@@ -131,6 +110,52 @@
                 <label for="confirmPassword">Confirm password:</label><br>
                 <input type="password" name="confirmPassword" id="confirmPassword" value="">
                 <p id="confirmPassAlert" style="display:none;color:red">Las contraseñas no coinciden</p><br><br>
+            </form>
+        </aside>
+    </template>
+
+    <template id="addressPage">
+        <aside class="mainProductContent">
+            <form action="">
+                <label for="firstName">First Name:</label><br>
+                <input type="text" name="firstName" id="firstName" value="">
+                <p id="firstNameAlert" style="display:none;color:red">La longitud no puede ser mayor de 20 carácteres</p><br>
+                <label for="lastName">Last Name:</label><br>
+                <input type="text" name="lastName" id="lastName" value=""><br>
+                <p id="lastNameAlert" style="display:none;color:red">La longitud no puede ser mayor de 20 carácteres</p><br>
+                <label for="birthday">Birthday:</label><br>
+                <input type="date" name="birthday" id="birthday" value=""><br>
+                <p id="birthdayAlert" style="display:none;color:red">Aviso fecha incorrecta (?)</p><br>
+                <label for="address1">Address 1:</label><br>
+                <input type="text" name="address1" id="address1" value=""><br>
+                <p id="address1Alert" style="display:none;color:red">La longitud no puede ser mayor de 50 carácteres</p><br>
+                <label for="address2">Address 2:</label><br>
+                <input type="text" name="address2" id="address2" value=""><br>
+                <p id="address2Alert" style="display:none;color:red">La longitud no puede ser mayor de 50 carácteres</p><br>
+                <label for="postCode">Post Code:</label><br>
+                <input type="text" name="postCode" id="postCode" value=""><br>
+                <p id="postCodeAlert1" style="display:none;color:red">Deben ser valores numéricos</p>
+                <p id="postCodeAlert2" style="display:none;color:red">La longitud debe ser igual a 5 cifras</p><br>
+                <label>Country:</label><br>
+                <select id="countries">
+                    <option value="0">Andorra</option>
+                    <option value="1">España</option>
+                    <option value="2">Francia</option>
+                    <option value="3">Alemania</option>
+                    <option value="4">Grecia</option>
+                </select><br>
+                <label for="phone">Phone:</label><br>
+                <select id="prePhone">
+                    <option value="+376">AND</option>
+                    <option value="+34">ESP</option>
+                    <option value="+33">FRA</option>
+                    <option value="+49">DEU</option>
+                    <option value="+30">GRC</option>
+                </select><input type="tel" name="phone" id="phone" value="">
+                <p id="phoneAlert1" style="display:none;color:red">Deben ser valores numéricos</p>
+                <p id="phoneAlert2" style="display:none;color:red">Debe tener 9 cifras</p><br>
+                <label for="checkAddress">This is my regular address.</label>
+                <input type="checkbox" id="checkAddress" name="checkAddress" value="acceptAddress">
             </form>
         </aside>
     </template>
@@ -204,9 +229,9 @@
     let leftTemplate = document.getElementById('productCard');
     let leftTemplateContent = leftTemplate.content;
     document.getElementById('left_section').appendChild(leftTemplateContent);
-    let rightTemplate = document.getElementById('profilePage');
+    let rightTemplate = document.getElementById('addressPage');
     let rightTemplateContent = rightTemplate.content;
     document.getElementById('right_section').appendChild(rightTemplateContent);
 </script>
-<script src="script.js"></script>
+<script src="addressControl.js"></script>
 </html>
