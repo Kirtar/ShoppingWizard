@@ -202,19 +202,21 @@
             <label>Extra Shipment 48h</label><br>
             <input type="radio" id="premiumShipment" name="shipment" value="premiumShipment">
             <label>Premium Shipment 24h</label>
-            <div class="estimatedDeliveryDate">
+            <div class="estimatedDeliveryDate" id="timeDeliver" style="display: none;">
                 <p><strong>Your order will arrive:</strong></p>
                 <p>Estimated delivery date</p>
-                <p>`Between <strong> ${initialDate}</strong> and <strong> ${finalDate}.</strong>`</p>
-            </div>
+                <p>Between <strong id="firstDate"></strong> and <strong id="lastDate"></strong></p>
+            </div><br>
             <input type="checkbox" id="isAGift" name="isAGift" value="isAGift">
             <label>Is it a gift?</label>
-            <h3>Gift message</h3>
-            <textarea id="w3review" name="w3review" rows="4" cols="50">
+            <div id="gift" style="display: none;">
+                <h3>Gift message</h3>
+                <textarea id="w3review" name="w3review" rows="4" cols="50">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </textarea>
-            <h3>Gift wrapper image</h3>
-            <input type="file" id="giftImage" name="giftImage" value="giftImage">
+                <h3>Gift wrapper image</h3>
+                <input type="file" id="giftImage" name="giftImage" value="giftImage">
+            </div>
         </form>
     </template>
 
