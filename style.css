@@ -5,6 +5,7 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   font-family: "Montserrat";
+  overflow: hidden;
 }
 :root {
   --basicBlue: #3498db;
@@ -18,16 +19,28 @@ textarea {
 
 label {
   font-weight: bold;
-  font-size: large;
+  font-size: 16px;
+}
+.labelCheckbox{
+  font-size: 10px;
 }
 
-input {
+.inputCheckbox {
+  width: auto;
+  min-width: 100px;
+}
+
+input, select {
   border-radius: 5px;
   background-color: var(--lightBlue);
-  padding: 4% 3%;
+  padding: 3% 1%;
   border: 0;
-  font-size: medium;
+  font-size: 14px;
+  min-width: 120px;
+  width: 90%;
 }
+
+
 
 .buyNowButton {
   background: var(--basicBlue);
@@ -44,21 +57,30 @@ body {
 
 body > main {
   display: inline-flex;
+  align-items: stretch;
   flex-wrap: wrap;
   width: 100%;
+  height: 100%;
 }
 
-body > main > section {
-  width: 50%;
+
+#left_section,#right_section{
   display: inline-flex;
   flex-wrap: wrap;
+  flex:1;
+  min-width: 300px;
 }
+section#left_section{
+  align-items: center;
+  justify-content: center;
+  padding: 0% 0% 0% 2%;
 
-main > section > picture {
-  width: 50%;
-  background: lightgray;
 }
-
+section#right_section{
+  align-items: center;
+  justify-content: center;
+  padding: 0% 2% 0% 0%;
+}
 header {
   margin: auto;
   padding: 0;
@@ -74,17 +96,6 @@ footer {
   background-color: darkgray;
 }
 
-section {
-  width: 100%;
-  display: inline-flex;
-  flex-wrap: wrap;
-  padding: 0% 10%;
-}
-
-picture {
-  width: 50%;
-  min-width: 300px;
-}
 
 body > main > section > aside {
   width: 50%;
@@ -108,6 +119,18 @@ hr {
   height: 50%;*/
 }
 
+.mainProductContent{
+  display: inline-flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap:wrap;
+}
+.mainProductContent > div{
+  width: 48%;
+  height: auto;
+  padding: 0% 2%;
+  min-width: 150px;
+}
 .smallProductImage {
   width: 25%;
   border: 2px 2px 2px 2px;
@@ -192,7 +215,7 @@ button {
   cursor: pointer;
   font-family: inherit;
   padding: 8px 30px;
-  margin-top: 5%;
+  margin-top: 2%;
   font-size: 14px;
 }
 
@@ -212,15 +235,46 @@ button:disabled {
 #top_section {
   width: 100%;
 }
+template{
+  display:flex;
+  
+}
+/*   shoppingCart   */
+.shoppingCart{
+  background-color: turquoise ;
+  width: 100%;
+  padding: 2%;
+  height: 100%;
+  display: inline-flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap:wrap;
+}
+div.shoppingCart > div{
+  width: 48%;
+  padding: 0% 2%;
+  min-width: 150px;
+}
+.cartImage > img{
+  height: 160px;
+}
+/*   CSS ADDRESS   */
+.prePhoneInLine{
+  display: flex;
+  align-items: center;
+}
+.selectStyle{
+  background-color:var(--basicBlue);
+  color:#fff;
 
 
-
+}
 /*   Floating Card   */
 
 .shop-card {
   position: absolute;
   top: 35%;
-  left: 85%;
+  left: 50%;
   transform: translate(-50%, -50%);
   width: 260px;
   min-width: 100px;
