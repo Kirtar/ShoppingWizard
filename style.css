@@ -5,7 +5,7 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   font-family: "Montserrat";
-  overflow: hidden;
+  overflow-x: hidden;
 }
 :root {
   --basicBlue: #3498db;
@@ -49,7 +49,8 @@ input, select {
 
 body {
   margin: 0 auto;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
   font-weight: normal;
 }
 
@@ -58,7 +59,7 @@ body > main {
   align-items: stretch;
   flex-wrap: wrap;
   width: 100%;
-  height: 100%;
+  height: 90%;
 }
 
 #top_section, #bottom_section {
