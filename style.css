@@ -5,8 +5,9 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   font-family: "Montserrat";
-  overflow: hidden;
+  overflow-x: hidden;
 }
+
 :root {
   --basicBlue: #3498db;
   --basicGrey: #e0e0e0;
