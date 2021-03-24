@@ -12,7 +12,7 @@ function finishPurchase() {
 
 function goToFinishPage() {
     let rightSection = document.getElementById('right_section');
-    rightSection.removeChild(rightSection.firstElementChild);
+    rightSection.innerHTML = "";
 
     let bottomSection = document.getElementById('bottom_section');
     bottomSection.removeChild(bottomSection.firstElementChild);
@@ -42,7 +42,7 @@ function goToFinishPage() {
 
 function goToShippingPage() {
     let rightSection = document.getElementById('right_section');
-    rightSection.removeChild(rightSection.firstElementChild);
+    rightSection.innerHTML="";
 
     let rightTemplate = document.getElementById('shippingPage');
     let rightTemplateContent = rightTemplate.content;

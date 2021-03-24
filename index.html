@@ -146,7 +146,7 @@
             <p>User address information</p>
             <hr />
         </div>
-        <form action="">
+        <form action="" id="addressForm">
             <label for="firstName">First Name:</label><br>
             <input type="text" name="firstName" id="firstName" value="">
             <p id="firstNameAlert" style="display:none;color:red">La longitud no puede ser mayor de 20 carácteres</p>
@@ -191,33 +191,31 @@
     </template>
 
     <template id="shippingPage">
-        <aside class="mainProductContent">
-            <div class="sectionTitle">
-                <p>Shipping information</p>
-                <hr />
+        <div class="sectionTitle">
+            <p>Shipping information</p>
+            <hr />
+        </div>
+        <form id="shippingForm">
+            <input type="radio" id="freeShipment" name="shipment" value="freeShipment">
+            <label>Free Shipment 72h</label><br>
+            <input type="radio" id="extraShipment" name="shipment" value="extraShipment">
+            <label>Extra Shipment 48h</label><br>
+            <input type="radio" id="premiumShipment" name="shipment" value="premiumShipment">
+            <label>Premium Shipment 24h</label>
+            <div class="estimatedDeliveryDate">
+                <p><strong>Your order will arrive:</strong></p>
+                <p>Estimated delivery date</p>
+                <p>`Between <strong> ${initialDate}</strong> and <strong> ${finalDate}.</strong>`</p>
             </div>
-            <form id="shippingForm">
-                <input type="radio" id="freeShipment" name="shipment" value="freeShipment">
-                <label>Free Shipment 72h</label><br>
-                <input type="radio" id="extraShipment" name="shipment" value="extraShipment">
-                <label>Extra Shipment 48h</label><br>
-                <input type="radio" id="premiumShipment" name="shipment" value="premiumShipment">
-                <label>Premium Shipment 24h</label>
-                <div class="estimatedDeliveryDate">
-                    <p><strong>Your order will arrive:</strong></p>
-                    <p>Estimated delivery date</p>
-                    <p>`Between <strong> ${initialDate}</strong> and <strong> ${finalDate}.</strong>`</p>
-                </div>
-                <input type="checkbox" id="isAGift" name="isAGift" value="isAGift">
-                <label>Is it a gift?</label>
-                <h3>Gift message</h3>
-                <textarea id="w3review" name="w3review" rows="4" cols="50">
+            <input type="checkbox" id="isAGift" name="isAGift" value="isAGift">
+            <label>Is it a gift?</label>
+            <h3>Gift message</h3>
+            <textarea id="w3review" name="w3review" rows="4" cols="50">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </textarea>
-                <h3>Gift wrapper image</h3>
-                <input type="file" id="giftImage" name="giftImage" value="giftImage">
-            </form>
-        </aside>
+            <h3>Gift wrapper image</h3>
+            <input type="file" id="giftImage" name="giftImage" value="giftImage">
+        </form>
     </template>
 
     <template id="orderCongrats">
