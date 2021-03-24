@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    <title>Document</title>
 </head>
 
 <body>
@@ -19,12 +18,7 @@
         <section id="top_section"></section>
         <section id="left_section"></section>
         <section id="right_section"></section>
-        <section id="top_section2"></section>
-        <section id="left_section2"></section>
-        <section id="right_section2"></section>
-        <section id="top_section3"></section>
-        <section id="left_section3"></section>
-        <section id="right_section3"></section>
+        <section id="bottom_section"></section>
     </main>
 
     <template id="progressBar">
@@ -42,10 +36,6 @@
                 <div class="circle"></div>
                 <div class="circle"></div>
             </div>
-        </div>
-        <div class="btn-container">
-            <button class="btn" id="prev" disabled>Prev</button>
-            <button class="btn" id="next">Next</button>
         </div>
     </template>
     <template id="productCard">
@@ -75,7 +65,7 @@
                     <option value="">L</option>
                     <option value="">XL</option>
                 </select>
-                </div>
+            </div>
             </div>
             <p>Color Picker:</p>
             <div>
@@ -85,13 +75,15 @@
                 <img src="" alt="">
                 <img src="" alt="">
             </div>
-            <input type="submit" class ="buyNowButton" value="BUY">
+            <input type="submit" id="buyNowButton" value="BUY">
         </aside>
     </template>
 
     <template id="shoppingCart">
-        <p>Your Product description</p>
-        <hr/>
+        <div class="sectionTitle">
+            <p>Your Product description</p>
+            <hr />
+        </div>
         <picture>
             <div class="shoppingCart">
                 <div class="cartImage">Image</div>
@@ -112,19 +104,23 @@
     </template>
 
     <template id="profilePage">
-        <p>User profile information</p>
-        <hr/>
         <aside class="mainProductContent">
-            <form action="">
+            <div class="sectionTitle">
+                <p>User profile information</p>
+                <hr />
+            </div>
+            <form action="" id="profileForm">
                 <label for="username">Username:</label><br>
                 <input type="text" name="username" id="username" value="">
-                <p id="userNameAlert" style="display:none;color:red">El username no debe contener espacios y debe tener una longitud comprendida entre 5 y 20 carácteres</p><br>
+                <p id="userNameAlert" style="display:none;color:red">El username no debe contener espacios y debe tener
+                    una longitud comprendida entre 5 y 20 carácteres</p><br>
                 <label for="email">Email:</label><br>
                 <input type="email" name="email" id="email" value="">
                 <p id="emailAlert" style="display:none;color:red">No es un email válido</p><br><br>
                 <label for="password">Password:</label><br>
                 <input type="password" name="password" id="password" value="">
-                <p id="passAlert" style="display:none;color:red">La contraseña debe contener mayúsculas, minúsculas, números y caracteres especiales</p><br>
+                <p id="passAlert" style="display:none;color:red">La contraseña debe contener mayúsculas, minúsculas,
+                    números y caracteres especiales</p><br>
                 <label for="confirmPassword">Confirm password:</label><br>
                 <input type="password" name="confirmPassword" id="confirmPassword" value="">
                 <p id="confirmPassAlert" style="display:none;color:red">Las contraseñas no coinciden</p><br><br>
@@ -133,62 +129,74 @@
     </template>
 
     <template id="addressPage">
-        <p>User address information</p>
-        <hr/>
         <aside class="mainProductContent">
-            <label>First Name:</label><br>
-            <input type="text" id="firstName" value=""><br>
-            <label>Last Name:</label><br>
-            <input type="text" id="lastName" value=""><br><br>
-            <label>Birthday:</label><br>
-            <input type="date" id="birthday" value=""><br>
-            <label>Phone:</label><br>
-            <input type="text" id="phone" value=""><br><br>
-            <label>Address 1:</label><br>
-            <input type="text" id="address1" value=""><br>
-            <label>Address 2:</label><br>
-            <input type="text" id="address2" value=""><br><br>
-            <label>Post Code:</label><br>
-            <input type="text" id="postCode" value=""><br>
-            <label>Country:</label><br>
-            <input type="text" id="country" value=""><br><br>
+            <div class="sectionTitle">
+                <p>User address information</p>
+                <hr />
+            </div>
+            <form action="" id="addressForm">
+                <label>First Name:</label><br>
+                <input type="text" id="firstName" value=""><br>
+                <label>Last Name:</label><br>
+                <input type="text" id="lastName" value=""><br><br>
+                <label>Birthday:</label><br>
+                <input type="date" id="birthday" value=""><br>
+                <label>Phone:</label><br>
+                <input type="text" id="phone" value=""><br><br>
+                <label>Address 1:</label><br>
+                <input type="text" id="address1" value=""><br>
+                <label>Address 2:</label><br>
+                <input type="text" id="address2" value=""><br><br>
+                <label>Post Code:</label><br>
+                <input type="text" id="postCode" value=""><br>
+                <label>Country:</label><br>
+                <input type="text" id="country" value=""><br><br>
+            </form>
         </aside>
     </template>
 
     <template id="shippingPage">
-        <p>Shipping information</p>
-        <hr/>
         <aside class="mainProductContent">
-            <input type="radio" id="freeShipment" name="shipment" value="freeShipment">
-            <label>Free Shipment 72h</label><br>
-            <input type="radio" id="extraShipment" name="shipment" value="extraShipment">
-            <label>Extra Shipment 48h</label><br>
-            <input type="radio" id="premiumShipment" name="shipment" value="premiumShipment">
-            <label>Premium Shipment 24h</label>
-            <div class="estimatedDeliveryDate">
-                <p><strong>Your order will arrive:</strong></p>
-                <p>Estimated delivery date</p>
-                <p>`Between <strong> ${initialDate}</strong> and <strong> ${finalDate}.</strong>`</p>
+            <div class="sectionTitle">
+                <p>Shipping information</p>
+                <hr />
             </div>
-            <input type="checkbox" id="isAGift" name="isAGift" value="isAGift">
-            <label>Is it a gift?</label>
-            <h3>Gift message</h3>
-            <textarea id="w3review" name="w3review" rows="4" cols="50">
+            <form id="shippingForm">
+                <input type="radio" id="freeShipment" name="shipment" value="freeShipment">
+                <label>Free Shipment 72h</label><br>
+                <input type="radio" id="extraShipment" name="shipment" value="extraShipment">
+                <label>Extra Shipment 48h</label><br>
+                <input type="radio" id="premiumShipment" name="shipment" value="premiumShipment">
+                <label>Premium Shipment 24h</label>
+                <div class="estimatedDeliveryDate">
+                    <p><strong>Your order will arrive:</strong></p>
+                    <p>Estimated delivery date</p>
+                    <p>`Between <strong> ${initialDate}</strong> and <strong> ${finalDate}.</strong>`</p>
+                </div>
+                <input type="checkbox" id="isAGift" name="isAGift" value="isAGift">
+                <label>Is it a gift?</label>
+                <h3>Gift message</h3>
+                <textarea id="w3review" name="w3review" rows="4" cols="50">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </textarea>
-            <h3>Gift wrapper image</h3>
-            <input type="file" id="giftImage" name="giftImage" value="giftImage">
+                </textarea>
+                <h3>Gift wrapper image</h3>
+                <input type="file" id="giftImage" name="giftImage" value="giftImage">
+            </form>
         </aside>
     </template>
 
     <template id="orderCongrats">
         <div id="orderCongrats">
-            <h1>Your order is complete!</h1>
+            <h1>Your order is complete! 🎉</h1>
             <h3>Thank you for your order</h3>
         </div>
     </template>
 
     <template id="finishPage">
+        <div class="sectionTitle">
+            <p>Your purchase information</p>
+            <hr />
+        </div>
         <aside class="mainProductContent">
             <h1>Your order</h1>
             <p>T-Shirt
@@ -203,16 +211,21 @@
             <p><strong>Your order will arrive:</strong></p>
             <p>Estimated delivery date</p>
             <p>`Beetween <strong> ${initialDate}</strong> and <strong> ${finalDate}.</strong>`</p>
-            <input type="checkbox" id="termsCheckbox" name="termsCheckbox" value="termsCheckbox">
-            <label>I have read and accept the terms and conditions</label>
-            <div id="termsAlert">Please accept the terms and condicions</div>
-            <input type="submit" class ="buyNowButton" value="Buy now">
+            <form action="" id="finishForm">
+                <input type="checkbox" id="termsCheckbox" name="termsCheckbox" value="termsCheckbox">
+                <label>I have read and accept the terms and conditions</label>
+                <div id="termsAlert">Please accept the terms and condicions</div>
+                <input type="submit" id="buyNowButton" class="btn" value="Buy now" form="finishForm">
+            </form>
         </aside>
     </template>
 
-    <template class="navigationButtons">
-        <input type="button" value="clearButton">
-        <input type="button" value="nextButton">
+    <template id="clearButton">
+        <input type="reset" class="btn" id="clear" value="Clear">
+    </template>
+
+    <template id="navigationButtons">
+        <input type="submit" class="btn" id="next" value="Next">
     </template>
 
     <footer>footer</footer>
@@ -220,32 +233,13 @@
 </body>
 
 <script>
-    let topTemplate = document.getElementById('progressBar');
-    let topTemplateContent = topTemplate.content;
-    document.getElementById('top_section').appendChild(topTemplateContent);
     let leftTemplate = document.getElementById('productCard');
     let leftTemplateContent = leftTemplate.content;
     document.getElementById('left_section').appendChild(leftTemplateContent);
-    let rightTemplate = document.getElementById('profilePage');
+    let rightTemplate = document.getElementById('mainPage');
     let rightTemplateContent = rightTemplate.content;
     document.getElementById('right_section').appendChild(rightTemplateContent);
-
-
-    let leftTemplate2 = document.getElementById('shoppingCart');
-    let leftTemplateContent2 = leftTemplate2.content;
-    document.getElementById('left_section2').appendChild(leftTemplateContent2);
-    let rightTemplate2 = document.getElementById('shippingPage');
-    let rightTemplateContent2 = rightTemplate2.content;
-    document.getElementById('right_section2').appendChild(rightTemplateContent2);
-    let leftTemplate3 = document.getElementById('addressPage');
-    let leftTemplateContent3 = leftTemplate3.content;
-    document.getElementById('left_section3').appendChild(leftTemplateContent3);
-    let rightTemplate3 = document.getElementById('finishPage');
-    let rightTemplateContent3 = rightTemplate3.content;
-    document.getElementById('right_section3').appendChild(rightTemplateContent3);
-
-
 </script>
 <script src="script.js"></script>
-<script src="progressBarControl.js"></script>
+
 </html>

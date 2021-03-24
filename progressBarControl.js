@@ -1,20 +1,17 @@
 var progress = document.getElementById("progress");
-var prev = document.getElementById("prev");
 var next = document.getElementById("next");
 var circles = document.querySelectorAll(".circle");
-
+let progressStage = 0;
 let currentActive = 1;
 
 next.addEventListener("click", () => {
   currentActive++;
   if (currentActive > circles.length) currentActive = circles.length;
-  update();
-});
-
-prev.addEventListener("click", () => {
-  currentActive--;
-  if (currentActive < 1) currentActive = 1;
-  update();
+  if (currentActive !== 4 || progressStage == 1) {
+    update();
+  } else if (currentActive == 4){
+    progressStage++;
+  }
 });
 
 const update = () => {
@@ -25,10 +22,4 @@ const update = () => {
   const actives = document.querySelectorAll(".active");
   progress.style.width =
     ((actives.length - 1) / (circles.length - 1)) * 100 + "%";
-  if (currentActive === 1) prev.disabled = true;
-  else if (currentActive === circles.length) next.disabled = true;
-  else {
-    prev.disabled = false;
-    next.disabled = false;
-  }
 };

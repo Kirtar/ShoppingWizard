@@ -1,71 +1,125 @@
+var buyButton = document.getElementById("buyNowButton");
+buyButton.onclick = goToProfilePage;
 
-// ----->>> profilePage <<<-----
+function finishPurchase() {
+    let bottomSection = document.getElementById('bottom_section');
+    bottomSection.innerHTML = 'Your registration took: xx min and yy sec';
 
-//FUNCION USERNAME
-var userNameField = document.getElementById("username");
-var userAlert = document.getElementById("userNameAlert");
-userNameField.oninput = hasValidUserName;
-function hasValidUserName(event) {
-    if(event.target.value.includes(' ')||
-    event.target.value.length<5||event.target.value.length>20){
-     userAlert.style.display="block";
-     event.target.style.borderColor="tomato";
-    }else{
-     event.target.style.borderColor="green";
-     userAlert.style.display="none";
-    }
-}
+    let topSection = document.getElementById('top_section');
+    let orderCongratsTemplateContent = document.getElementById('orderCongrats').content;
+    topSection.appendChild(orderCongratsTemplateContent);
+};
 
-//FUNCION EMAIL
-var email = document.getElementById("email");
-email.oninput = hasValidEmail;
-var emailAlert = document.getElementById("emailAlert");
-var filterEmail =/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-function hasValidEmail(event) {
-    if(!event.target.value.match(filterEmail)||event.target.value.length>50){
-     emailAlert.style.display="block";
-     event.target.style.borderColor="blue";
-    }else{
-     event.target.style.borderColor="green";
-     emailAlert.style.display="none";
-    }
-}
+function goToFinishPage() {
+    let rightSection = document.getElementById('right_section');
+    rightSection.removeChild(rightSection.firstElementChild);
 
+    let bottomSection = document.getElementById('bottom_section');
+    bottomSection.removeChild(bottomSection.firstElementChild);
+    bottomSection = document.getElementById('bottom_section');
+    bottomSection.removeChild(bottomSection.firstElementChild);
 
-//FUNCION PASS
-var pass = document.getElementById("password");
-pass.oninput = hasValidPass;
-var passAlert = document.getElementById("passAlert");
-var filterPass =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]/;
-function hasValidPass(event) {
-    if(confirmPass.value !=''){
-        hasValidConfirmPass();
-    }
-    if(!event.target.value.match(filterPass)||event.target.value.length<8||event.target.value.length>20){
-     passAlert.style.display="block";
-     event.target.style.borderColor="red";
-    }else{
-     event.target.style.borderColor="green";
-     passAlert.style.display="none";
-    }
-}
+    let rightTemplate = document.getElementById('finishPage');
+    let rightTemplateContent = rightTemplate.content;
+    rightSection.appendChild(rightTemplateContent);
 
-//FUNCION CONFIRM-PASS
-var confirmPass = document.getElementById("confirmPassword");
-confirmPass.oninput = hasValidConfirmPass;
-var confirmPassAlert = document.getElementById("confirmPassAlert");
-function hasValidConfirmPass() {
+    var form = document.getElementById('finishForm');
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        finishPurchase();
+        currentActive++;
+        if (currentActive > circles.length) currentActive = circles.length;
+        if (currentActive !== 4 || progressStage == 1) {
+            update();
+        } else if (currentActive == 4) {
+            progressStage++;
+        }
+        form.remove();
+    });
 
-    if(confirmPass.value !== pass.value){
-        confirmPassAlert.style.display="block";
-        confirmPass.style.borderColor="red";
-       }else{
-        confirmPass.style.borderColor="green";
-        confirmPassAlert.style.display="none";
-    }
-}
+};
 
 
+function goToShippingPage() {
+    let rightSection = document.getElementById('right_section');
+    rightSection.removeChild(rightSection.firstElementChild);
 
+    let rightTemplate = document.getElementById('shippingPage');
+    let rightTemplateContent = rightTemplate.content;
+    rightSection.appendChild(rightTemplateContent);
 
+    const scriptShipping = document.createElement('script');
+    scriptShipping.src = './shippingControl.js';
+    document.head.append(scriptShipping);
 
+    document.getElementById('clear').setAttribute('form', 'shippingForm');
+    document.getElementById('next').setAttribute('form', 'shippingForm');
+
+    var form = document.getElementById('shippingForm');
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        goToFinishPage();
+    });
+};
+
+function goToAddressPage() {
+    let rightSection = document.getElementById('right_section');
+    rightSection.removeChild(rightSection.firstElementChild);
+
+    let rightTemplate = document.getElementById('addressPage');
+    let rightTemplateContent = rightTemplate.content;
+    rightSection.appendChild(rightTemplateContent);
+
+    const scriptAdress = document.createElement('script');
+    scriptAdress.src = './addressControl.js';
+    document.head.append(scriptAdress);
+
+    document.getElementById('clear').setAttribute('form', 'addressForm');
+    document.getElementById('next').setAttribute('form', 'addressForm');
+
+    var form = document.getElementById('addressForm');
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        goToShippingPage()
+    });
+};
+
+function goToProfilePage() {
+    let leftSection = document.getElementById('left_section');
+    leftSection.removeChild(leftSection.firstElementChild);
+    let rightSection = document.getElementById('right_section');
+    rightSection.removeChild(rightSection.firstElementChild);
+
+    let topTemplate = document.getElementById('progressBar');
+    let topTemplateContent = topTemplate.content;
+    document.getElementById('top_section').appendChild(topTemplateContent);
+    let leftTemplate = document.getElementById('shoppingCart');
+    let leftTemplateContent = leftTemplate.content;
+    document.getElementById('left_section').appendChild(leftTemplateContent);
+    let rightTemplate = document.getElementById('profilePage');
+    let rightTemplateContent = rightTemplate.content;
+    document.getElementById('right_section').appendChild(rightTemplateContent);
+    let bottomTemplate = document.getElementById('clearButton');
+    let bottomTemplateContent = bottomTemplate.content;
+    document.getElementById('bottom_section').appendChild(bottomTemplateContent);
+    bottomTemplate = document.getElementById('navigationButtons');
+    bottomTemplateContent = bottomTemplate.content;
+    document.getElementById('bottom_section').appendChild(bottomTemplateContent);
+
+    document.getElementById('clear').setAttribute('form', 'profileForm');
+    document.getElementById('next').setAttribute('form', 'profileForm');
+
+    const scriptProgress = document.createElement('script');
+    scriptProgress.src = './progressBarControl.js';
+    document.head.append(scriptProgress);
+
+    const scriptProfile = document.createElement('script');
+    scriptProfile.src = './profileControl.js';
+    document.head.append(scriptProfile);
+
+    var form = document.getElementById('profileForm');
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        goToAddressPage();
+    });
+};

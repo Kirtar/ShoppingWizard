@@ -29,7 +29,7 @@ input {
   font-size: medium;
 }
 
-.buyNowButton {
+#buyNowButton {
   background: var(--basicBlue);
   padding: 8px 30px;
   color: #fff;
@@ -48,7 +48,11 @@ body > main {
   width: 100%;
 }
 
-body > main > section {
+#top_section, #bottom_section {
+  width: 100%;
+}
+
+#left_section, #right_section {
   width: 50%;
   display: inline-flex;
   flex-wrap: wrap;
@@ -91,9 +95,13 @@ body > main > section > aside {
   min-width: 300px;
 }
 
-hr {
+.sectionTitle {
+  width: 100%;
+}
+
+.sectionTitle hr{
   height: 5px;
-  width: 30%;
+  width: 40%;
   border: 0;
   background-color: var(--basicBlue);
 }
@@ -101,11 +109,6 @@ hr {
 .smallList {
   width: 100%;
   display: inline-flex;
-}
-
-.mainProductImage {
-  /*width: 50%;
-  height: 50%;*/
 }
 
 .smallProductImage {
@@ -184,7 +187,7 @@ hr {
   background-color: var(--basicBlue);
 }
 
-button {
+.btn {
   background-color: var(--basicBlue);
   color: #fff;
   border: 0;
@@ -196,19 +199,15 @@ button {
   font-size: 14px;
 }
 
-button:active {
+.btn:active {
   transform: scale(0.98);
 }
 
-button:focus {
+.btn:focus {
   outline: 0;
 }
 
-button:disabled {
+.btn:disabled {
   background-color: var(--basicGrey);
   cursor: not-allowed;
-}
-
-#top_section {
-  width: 100%;
 }
