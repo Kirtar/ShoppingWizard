@@ -5,6 +5,8 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   font-family: "Montserrat";
+  overflow-x: hidden;
+  
 }
 :root {
   --basicBlue: #3498db;
@@ -18,16 +20,29 @@ textarea {
 
 label {
   font-weight: bold;
-  font-size: large;
+  font-size: 16px;
+}
+.labelCheckbox{
+  font-size: 10px;
 }
 
-input {
+/*
+#checkAddress{
+  width: 20px;
+}*/
+
+input, select {
   border-radius: 5px;
   background-color: var(--lightBlue);
-  padding: 4% 3%;
+  padding: 3% 1%;
+  min-width: 140px;
+  width: 90%;
   border: 0;
-  font-size: medium;
+  font-size: 14px;
+
 }
+
+
 
 #buyNowButton {
   background: var(--basicBlue);
@@ -38,31 +53,44 @@ input {
 
 body {
   margin: 0 auto;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
   font-weight: normal;
 }
 
 body > main {
   display: inline-flex;
+  align-items: stretch;
   flex-wrap: wrap;
   width: 100%;
+  height: 86%;
 }
 
-#top_section, #bottom_section {
+#top_section{
   width: 100%;
+  margin-bottom: 1%;
 }
 
 #left_section, #right_section {
-  width: 50%;
+  /*width: 50%;revisar*/
   display: inline-flex;
   flex-wrap: wrap;
+  flex:1;
+  min-width: 300px;
+  padding: 0% 2% 0% 2%;
+  margin: 2%;
 }
+section#left_section{
+  align-items: center;
+  justify-content: center;
 
-main > section > picture {
-  width: 50%;
-  background: lightgray;
+
 }
-
+section#right_section{
+  align-items: center;
+  justify-content: center;
+  padding: 0% 2% 0% 0%;
+}
 header {
   margin: auto;
   padding: 0;
@@ -78,17 +106,6 @@ footer {
   background-color: darkgray;
 }
 
-section {
-  width: 100%;
-  display: inline-flex;
-  flex-wrap: wrap;
-  padding: 0% 10%;
-}
-
-picture {
-  width: 50%;
-  min-width: 300px;
-}
 
 body > main > section > aside {
   width: 50%;
@@ -111,6 +128,19 @@ body > main > section > aside {
   display: inline-flex;
 }
 
+.mainProductContent{
+  display: inline-flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap:wrap;
+  width: 100%;
+}
+.mainProductContent > div{
+  width: 48%;
+  height: auto;
+  padding: 0% 2%;
+  min-width: 150px;
+}
 .smallProductImage {
   width: 25%;
   border: 2px 2px 2px 2px;
@@ -121,7 +151,7 @@ body > main > section > aside {
 
 .container {
   text-align: center;
-  margin-top: 5%;
+  margin-top: 2%;
   width: 100%;
 }
 
@@ -195,10 +225,45 @@ body > main > section > aside {
   cursor: pointer;
   font-family: inherit;
   padding: 8px 30px;
-  margin-top: 5%;
+  /*margin-top: 2%;*/
   font-size: 14px;
 }
-
+#clear{
+  border-radius: 5px;
+  background-color: var(--basicGrey);
+  padding: 0;
+  color:#3498db;
+  border: 2px;
+  border-style: solid;
+  border-color: #3498db;
+  font-size: 14px;
+  min-width: 120px;
+  width: 20px;
+  height: 40px;
+  font-weight: bold;
+}
+#next{
+  border-radius: 5px;
+  background-color: var(--basicBlue);
+  padding: 0;
+  color:#fff;
+  border: 2px;
+  border-style: solid;
+  border-color: #3498db;
+  font-size: 14px;
+  min-width: 120px;
+  width: 20px;
+  height: 40px;
+  font-weight: bold;
+}
+#bottom_section{
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin-bottom: 0%;
+}
 .btn:active {
   transform: scale(0.98);
 }
@@ -212,12 +277,59 @@ body > main > section > aside {
   cursor: not-allowed;
 }
 
+/*   shoppingCart   */
+.shoppingCart{
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgba(41, 41, 40, 0.637);
+    border-radius: 10px;
+    width: 100%;
+    padding: 2%;
+    height: 300px;
+    display: inline-flex;
+    /* align-items: stretch; */
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 2%;
+}
+div.shoppingCart > div{
+  width: 48%;
+  padding: 0% 2%;
+  min-width: 150px;
+}
+.cartImage > img{
+  height: 160px;
+}
+/*   CSS ADDRESS   */
+.prePhoneInLine{
+  display: flex;
+  align-items: center;
+}
+.selectStyle{
+  background-color:var(--basicBlue);
+  color:#fff;
+}
+.radioButtonInput,
+.checkboxInput {
+  min-width: auto;
+  width: auto;
+  margin-right: 3px;
+}
+
+.estimatedDeliveryDate > p {
+  font-size: 12px;
+}
+
+.shippingForm {
+  align-self: stretch;
+}
+
 /*   Floating Card   */
 
 .shop-card {
   position: absolute;
   top: 35%;
-  left: 85%;
+  left: 50%;
   transform: translate(-50%, -50%);
   width: 260px;
   min-width: 100px;
@@ -238,4 +350,17 @@ body > main > section > aside {
   margin-top: 3%;
   font-size: 12px;
   opacity: 0.6;
+}
+
+/*  */
+.inputError{
+  font-size: 10px;
+  color: #000000;
+  background-color:#f0ab9c;
+  display: none;
+  min-width: 140px;
+  width: 90%;
+  border-radius: 5px;
+  border: 0;
+  padding: 2px;
 }

@@ -54,7 +54,7 @@
     <template id="productCard">
         <picture>
             <div class="mainProductImage">
-                <img src='./images/black.jpeg'>
+                <img src='./images/black.png'>
             </div>
             <div class="smallList">
                 <div class="smallProductImage">small</div>
@@ -97,9 +97,8 @@
             <p>Your Product description</p>
             <hr />
         </div>
-        <picture>
             <div class="shoppingCart">
-                <div class="cartImage">Image</div>
+                <div class="cartImage"><img src='./images/black.png'></div>
                 <div class="cartDetails">
                     <h1>Basic t-shirt</h1>
                     <p>Size
@@ -113,32 +112,33 @@
                     </p>
                 </div>
             </div>
-        </picture>
     </template>
 
     <template id="profilePage">
-        <aside class="mainProductContent">
             <div class="sectionTitle">
                 <p>User profile information</p>
                 <hr />
             </div>
-            <form action="" id="profileForm">
-                <label for="username">Username:</label><br>
-                <input type="text" name="username" id="username" value="">
-                <p id="userNameAlert" style="display:none;color:red">El username no debe contener espacios y debe tener
-                    una longitud comprendida entre 5 y 20 carácteres</p><br>
-                <label for="email">Email:</label><br>
-                <input type="email" name="email" id="email" value="">
-                <p id="emailAlert" style="display:none;color:red">No es un email válido</p><br><br>
-                <label for="password">Password:</label><br>
-                <input type="password" name="password" id="password" value="">
-                <p id="passAlert" style="display:none;color:red">La contraseña debe contener mayúsculas, minúsculas,
-                    números y caracteres especiales</p><br>
-                <label for="confirmPassword">Confirm password:</label><br>
-                <input type="password" name="confirmPassword" id="confirmPassword" value="">
-                <p id="confirmPassAlert" style="display:none;color:red">Las contraseñas no coinciden</p><br><br>
+            <form action="" id="profileForm" class="mainProductContent">
+                <div>
+                    <label for="username">Username:</label><br>
+                    <input type="text" name="username" id="username" value="">
+                    <p id="userNameAlert" class="inputError" >El username no debe contener espacios y debe tener
+                        una longitud comprendida entre 5 y 20 carácteres</p><br><br>
+                    <label for="email">Email:</label><br>
+                    <input type="email" name="email" id="email" value="">
+                    <p id="emailAlert"  class="inputError">No es un email válido</p><br><br>
+                </div>
+                <div>
+                    <label for="password">Password:</label><br>
+                    <input type="password" name="password" id="password" value="">
+                    <p id="passAlert"  class="inputError">La contraseña debe contener mayúsculas, minúsculas,
+                        números y caracteres especiales</p><br><br>
+                    <label for="confirmPassword">Confirm password:</label><br>
+                    <input type="password" name="confirmPassword" id="confirmPassword" value="">
+                    <p id="confirmPassAlert"  class="inputError">Las contraseñas no coinciden</p><br><br>
+                </div>
             </form>
-        </aside>
     </template>
 
     <template id="addressPage">
@@ -146,48 +146,53 @@
             <p>User address information</p>
             <hr />
         </div>
-        <form action="" id="addressForm">
-            <label for="firstName">First Name:</label><br>
-            <input type="text" name="firstName" id="firstName" value="">
-            <p id="firstNameAlert" style="display:none;color:red">La longitud no puede ser mayor de 20 carácteres</p>
-            <br>
-            <label for="lastName">Last Name:</label><br>
-            <input type="text" name="lastName" id="lastName" value=""><br>
-            <p id="lastNameAlert" style="display:none;color:red">La longitud no puede ser mayor de 20 carácteres</p><br>
-            <label for="birthday">Birthday:</label><br>
-            <input type="date" name="birthday" id="birthday" value=""><br>
-            <p id="birthdayAlert" style="display:none;color:red">Aviso fecha incorrecta (?)</p><br>
-            <label for="address1">Address 1:</label><br>
-            <input type="text" name="address1" id="address1" value=""><br>
-            <p id="address1Alert" style="display:none;color:red">La longitud no puede ser mayor de 50 carácteres</p><br>
-            <label for="address2">Address 2:</label><br>
-            <input type="text" name="address2" id="address2" value=""><br>
-            <p id="address2Alert" style="display:none;color:red">La longitud no puede ser mayor de 50 carácteres</p><br>
-            <label for="postCode">Post Code:</label><br>
-            <input type="text" name="postCode" id="postCode" value=""><br>
-            <p id="postCodeAlert1" style="display:none;color:red">Deben ser valores numéricos</p>
-            <p id="postCodeAlert2" style="display:none;color:red">La longitud debe ser igual a 5 cifras</p><br>
-            <label>Country:</label><br>
-            <select id="countries">
-                <option value="0">Andorra</option>
-                <option value="1">España</option>
-                <option value="2">Francia</option>
-                <option value="3">Alemania</option>
-                <option value="4">Grecia</option>
-            </select><br>
-            <label for="phone">Phone:</label><br>
-            <select id="prePhone">
-                <option value="+376">AND</option>
-                <option value="+34">ESP</option>
-                <option value="+33">FRA</option>
-                <option value="+49">DEU</option>
-                <option value="+30">GRC</option>
-            </select><input type="tel" name="phone" id="phone" value="">
-            <p id="phoneAlert1" style="display:none;color:red">Deben ser valores numéricos</p>
-            <p id="phoneAlert2" style="display:none;color:red">Debe tener 9 cifras</p><br>
-            <label for="checkAddress">This is my regular address.</label>
-            <input type="checkbox" id="checkAddress" name="checkAddress" value="acceptAddress">
-        </form>
+            <form action="" id="addressForm" class="mainProductContent">
+                <div>
+                    <label for="firstName">First Name:</label><br>
+                    <input type="text" name="firstName" id="firstName" value=""><br>
+                    <p id="firstNameAlert" style="display:none;color:red">La longitud no puede ser mayor de 20 carácteres</p><br>
+                    <label for="lastName">Last Name:</label><br>
+                    <input type="text" name="lastName" id="lastName" value=""><br>
+                    <p id="lastNameAlert" style="display:none;color:red">La longitud no puede ser mayor de 20 carácteres</p><br>
+                    <label for="birthday">Birthday:</label><br>
+                    <input type="date" name="birthday" id="birthday" value=""><br>
+                    <p id="birthdayAlert" style="display:none;color:red">Aviso fecha incorrecta (?)</p><br>
+                    <label>Country:</label><br>
+                    <select id="countries" class="selectStyle">
+                        <option value="0">Andorra</option>
+                        <option value="1">España</option>
+                        <option value="2">Francia</option>
+                        <option value="3">Alemania</option>
+                        <option value="4">Grecia</option>
+                    </select><br>
+                    <input class="checkboxInput" type="checkbox" id="checkAddress" name="checkAddress" value="acceptAddress">
+                    <label class="labelCheckbox" for="checkAddress">This is my regular address.</label>
+                    
+                </div>
+                <div>
+                    <label for="address1">Address 1:</label><br>
+                    <input type="text" name="address1" id="address1" value=""><br>
+                    <p id="address1Alert" style="display:none;color:red">La longitud no puede ser mayor de 50 carácteres</p><br>
+                    <label for="address2">Address 2:</label><br>
+                    <input type="text" name="address2" id="address2" value=""><br>
+                    <p id="address2Alert" style="display:none;color:red">La longitud no puede ser mayor de 50 carácteres</p><br>
+                    <label for="postCode">Post Code:</label><br>
+                    <input type="text" name="postCode" id="postCode" value=""><br>
+                    <p id="postCodeAlert1" style="display:none;color:red">Deben ser valores numéricos</p>
+                    <p id="postCodeAlert2" style="display:none;color:red">La longitud debe ser igual a 5 cifras</p><br>
+                    <label for="phone">Phone:</label><br>
+                    <select id="prePhone" class="selectStyle">
+                        <option value="+376">AND</option>
+                        <option value="+34">ESP</option>
+                        <option value="+33">FRA</option>
+                        <option value="+49">DEU</option>
+                        <option value="+30">GRC</option>
+                    </select><br><br>
+                    <input type="tel" name="phone" id="phone" value="">  
+                    <p id="phoneAlert1" style="display:none;color:red">Deben ser valores numéricos</p>
+                    <p id="phoneAlert2" style="display:none;color:red">Debe tener 9 cifras</p><br>
+                </div>
+            </form>
     </template>
 
     <template id="shippingPage">
@@ -195,6 +200,7 @@
             <p>Shipping information</p>
             <hr />
         </div>
+<<<<<<< HEAD
         <form id="shippingForm">
             <input type="radio" id="freeShipment" name="shipment" value="freeShipment">
             <label>Free Shipment 72h</label><br>
@@ -215,10 +221,29 @@
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </textarea>
                 <h3>Gift wrapper image</h3>
+=======
+        <form class="shippingForm" id="shippingForm">
+            <div class="radioButtonForm">
+                <label><input type="radio" class="radioButtonInput" id="freeShipment" name="shipment" value="freeShipment">Free Shipment 72h</label><br>
+                <label><input type="radio" class="radioButtonInput" id="extraShipment" name="shipment" value="extraShipment">Extra Shipment 48h</label><br>
+                <label><input type="radio" class="radioButtonInput" id="premiumShipment" name="shipment" value="premiumShipment">Premium Shipment 24h</label>
+            </div>
+            <div class="estimatedDeliveryDate" id="timeDeliver">
+                <h4><strong>Your order will arrive:</strong></h4>
+                <p>Estimated delivery date</p>
+                <p>Between <strong id="firstDate"></strong> and <strong id="lastDate"></strong></p>
+            </div>
+            <label><input type="checkbox" class="checkboxInput" id="isAGift" name="isAGift" value="isAGift">Is it a gift?</label>
+            <div id="gift" style="visibility:hidden;">
+                <p><strong>Gift message</strong></p>
+                <textarea id="w3review" name="w3review" rows="4" cols="50">Lorem ipsum</textarea>
+                <p><strong>Gift wrapper image</strong></p>
+>>>>>>> develop
                 <input type="file" id="giftImage" name="giftImage" value="giftImage">
             </div>
         </form>
     </template>
+
 
     <template id="orderCongrats">
         <div id="orderCongrats">
@@ -263,7 +288,7 @@
         <input type="submit" class="btn" id="next" value="Next">
     </template>
 
-    <footer>footer</footer>
+    <footer style="display:none;">footer</footer>
 
 </body>
 
