@@ -98,7 +98,10 @@ header {
   width: 100%;
   min-height: 100px;
   background-color: black;
+  display: inline-flex;
+  justify-content: space-between;
 }
+
 
 footer {
   width: 100%;
@@ -327,17 +330,18 @@ div.shoppingCart > div{
 /*   Floating Card   */
 
 .shop-card {
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: static;
+  top: 8%;
+  left:80%;
+ 
   width: 260px;
-  min-width: 100px;
+  min-width: 80px;
   background: #ebdb07;
   box-shadow: 0 10px 20px rgba(0,0,0,.3);
   overflow: hidden;
   border-radius: 5px;
   padding: 1% 1%;
+  margin: 1%;
   text-align: center;
   z-index: 1;
   opacity: 0.8;
