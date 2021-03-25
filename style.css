@@ -26,7 +26,6 @@ label {
   font-size: 10px;
 }
 
-
 input,
 select {
   border-radius: 5px;
@@ -38,33 +37,34 @@ select {
   font-size: 14px;
 }
 
-#colorProduct{
-  display:flex;
+#colorProduct {
+  display: flex;
   justify-content: space-around;
 }
-#colorProduct>div{
-    width: 20px;
-    height: 20px;
-    border-radius: 20px 20px 20px 20px;
+#colorProduct > div {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px 20px 20px 20px;
 }
 
-#product1{
+#product1 {
   background-color: #d4c118;
 }
-#product2{
+#product2 {
   background-color: #189fd4;
 }
-#product3{
+#product3 {
   background-color: #9f18d4;
 }
-#product4{
+#product4 {
   background-color: #d41821;
 }
-#product5{
+#product5 {
   background-color: #18d421;
 }
 
-#buyNowButton, #buyNowFinishButton {
+#buyNowButton,
+#buyNowFinishButton {
   margin-top: 10%;
   background: var(--basicBlue);
   padding: 4% 0%;
@@ -94,7 +94,7 @@ body > main {
   margin-bottom: 1%;
 }
 
-#orderCongrats{
+#orderCongrats {
   padding: 0% 2% 0% 2%;
   margin: 2%;
 }
@@ -116,7 +116,6 @@ header {
   min-height: 100px;
   background-color: black;
 }
-
 
 footer {
   width: 100%;
@@ -148,8 +147,17 @@ body > main > section > aside {
   width: 60%;
   justify-content: center;
 }
-.mainContent>div {
+.mainContent > div {
+  height: auto;
+  padding: 2%;
+  min-width: 150px;
+}
 
+.productDescription {
+  width: 60%;
+  justify-content: center;
+}
+.productDescription > div {
   height: auto;
   padding: 2%;
   min-width: 150px;
@@ -178,10 +186,27 @@ body > main > section > aside {
   display: flex;
   margin: 2% 0%;
 }
-.ProductContent > div > div{
+.ProductContent > div > div {
   width: 70px;
- /* padding: 4%; */
+  /* padding: 4%; */
 }
+
+.productGallery {
+  display: inline-flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.productGallery > div {
+  padding: 0% 2%;
+  min-width: 120px;
+  display: flex;
+  margin: 2% 0%;
+}
+.productGallery > div > div {
+  width: 70px;
+  /* padding: 4%; */
+}
+
 .imgMini {
   height: 60px;
   margin: 20%;
@@ -406,4 +431,59 @@ div.shoppingCart > div {
 #termsCheckbox {
   min-width: auto;
   width: auto;
-} 
+}
+
+.product-color {
+  margin-bottom: 30px;
+}
+
+.product-color span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #86939e;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.productGallery img {
+  transition: all 0.3s ease;
+}
+
+.colorProduct div {
+  display: inline-block;
+}
+
+.colorProduct input[type="radio"] {
+  display: none;
+}
+
+.colorProduct input[type="radio"] + label span {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin: -1px 4px 0 0;
+  vertical-align: middle;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.colorProduct > div > input[type="radio"] + label span {
+  border: 2px solid #ffffff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+}
+
+.colorProduct input[type="radio"]#red + label span {
+  background-color: #c91524;
+}
+.colorProduct input[type="radio"]#blue + label span {
+  background-color: #4d61b9;
+}
+.colorProduct input[type="radio"]#black + label span {
+  background-color: #323232;
+}
+
+.colorProduct input[type="radio"]:checked + label span {
+  background-image: url(images/check-icn.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}

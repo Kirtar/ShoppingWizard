@@ -48,38 +48,51 @@
             </div>
         </div>
     </template>
-    <template id="productCard">
-        <div class="ProductContent">
+
+    <template id="productGallery">
+        <div class="productGallery">
             <div>
-                <img src='./images/black.png'>
+                <img id="bigImage" data-image="black" class="active" src="images/front/black.jpg">
             </div>
-            <div>
-                <div><img class="imgMini" src='./images/black.png'></div>
-                <div><img class="imgMini" src='./images/black.png'></div>
-                <div><img class="imgMini" src='./images/black.png'></div>
-                <div><img class="imgMini" src='./images/black.png'></div>
+            <div class="imageMiniatures">
+                <div><img id="frontMini" class="imgMini active" data-image="black" src="images/front/black.jpg" alt=""></div>
+                <div><img id="zoomedMini" class="imgMini" data-image="black" src="images/zoomed/black.jpg" alt=""></div>
+                <div><img id="foldedMini" class="imgMini" data-image="black" src="images/folded/black.jpg" alt=""></div>
+                <div><img id="backMini" class="imgMini" data-image="black" src="images/back/black.jpg" alt=""></div>
             </div>
         </div>
     </template>
-    <template id="mainPage">
-        <div class="mainContent">
+
+    <template id="productDescription">
+        <div class="productDescription">
             <h1>Basic Black</h1><br>
             <p>Price: <span>12€</span></p>
-            <p>Size:</p>
-            <select name="" id="">
-                <option value="">XS</option>
-                <option value="">S</option>
-                <option value="">M</option>
-                <option value="">L</option>
-                <option value="">XL</option>
-            </select>
-            <p>Color Picker:</p>
-            <div id="colorProduct">
-                <div id="product1"></div>
-                <div id="product2"></div>
-                <div id="product3"></div>
-                <div id="product4"></div>
-                <div id="product5"></div>
+            <div class="product-color">
+                <p>Choose your color:</p>
+                <div class="colorProduct">
+                    <div>
+                        <input data-image="red" type="radio" id="red" name="color" value="red">
+                        <label for="red"><span></span></label>
+                    </div>
+                    <div>
+                        <input data-image="blue" type="radio" id="blue" name="color" value="blue">
+                        <label for="blue"><span></span></label>
+                    </div>
+                    <div>
+                        <input data-image="black" type="radio" id="black" name="color" value="black" checked>
+                        <label for="black"><span></span></label>
+                    </div>
+                </div>
+            </div>
+            <div class="cable-config">
+                <p>Size:</p>
+                <select name="sizeChoosing" id="">
+                    <option value="">XS</option>
+                    <option value="">S</option>
+                    <option value="">M</option>
+                    <option value="">L</option>
+                    <option value="">XL</option>
+                </select>
             </div>
             <input type="submit" id="buyNowButton" value="BUY">
         </div>
@@ -91,7 +104,7 @@
             <hr />
         </div>
         <div class="shoppingCart">
-            <div class="cartImage"><img src='./images/black.png'></div>
+            <div class="cartImage"><img src='./images/front/black.jpg'></div>
             <div class="cartDetails">
                 <h1>Basic t-shirt</h1>
                 <p>Size
@@ -266,10 +279,10 @@
 </body>
 
 <script>
-    let leftTemplate = document.getElementById('productCard');
+    let leftTemplate = document.getElementById('productGallery');
     let leftTemplateContent = leftTemplate.content;
     document.getElementById('left_section').appendChild(leftTemplateContent);
-    let rightTemplate = document.getElementById('mainPage');
+    let rightTemplate = document.getElementById('productDescription');
     let rightTemplateContent = rightTemplate.content;
     document.getElementById('right_section').appendChild(rightTemplateContent);
 </script>

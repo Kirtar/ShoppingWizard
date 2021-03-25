@@ -15,6 +15,48 @@ var elapsedMinutes = 0;
 var registrationFinish = 0;
 var registationTime = 0;
 
+function changeGalleryImages(selectedProductColor) {
+    let bigImage = document.getElementById('bigImage');
+    bigImage.src = `images/front/${selectedProductColor}.jpg`;
+    let miniFront = document.getElementById('frontMini');
+    miniFront.src = `images/front/${selectedProductColor}.jpg`;
+    let miniZoomed = document.getElementById('zoomedMini');
+    miniZoomed.src = `images/zoomed/${selectedProductColor}.jpg`;
+    let miniFolded = document.getElementById('foldedMini');
+    miniFolded.src = `images/folded/${selectedProductColor}.jpg`;
+    let miniBack = document.getElementById('backMini');
+    miniBack.src = `images/back/${selectedProductColor}.jpg`;
+}
+
+function changeImagesColor(event) {
+    let selectedColorSelector = event.target;
+    let selectedProductColor = selectedColorSelector.getAttribute('data-image');
+    var activeColorSelector = document.querySelector('.colorProduct input[type="radio"]:checked');
+    activeColorSelector.toggleAttribute('checked');
+    changeGalleryImages(selectedProductColor);
+    selectedColorSelector.toggleAttribute('checked');
+}
+
+var colorInputs = document.querySelectorAll('.colorProduct input');
+colorInputs.forEach((colorInput) => {
+    colorInput.addEventListener("click", function (event) {
+        changeImagesColor(event);
+    })
+});
+
+function changeMainImage(event) {
+    let hoveredImaged = event.target;
+    var activeBigImage =  document.getElementById('bigImage');
+    activeBigImage.src = hoveredImaged.src;
+}
+
+var miniImages = document.querySelectorAll('.imgMini');
+miniImages.forEach((miniImage) => {
+    miniImage.addEventListener("mouseover", function (event) {
+        changeMainImage(event);
+    })
+});
+
 function finishPurchase() {
     let bottomSection = document.getElementById('bottom_section');
     bottomSection.innerHTML = 'Your registration took: xx min and yy sec';
