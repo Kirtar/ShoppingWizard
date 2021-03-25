@@ -5,6 +5,10 @@ function finishPurchase() {
     let bottomSection = document.getElementById('bottom_section');
     bottomSection.innerHTML = 'Your registration took: xx min and yy sec';
 
+    const scriptShipping = document.createElement('script');
+    scriptShipping.src = './shippingControl.js';
+    document.head.append(scriptShipping);
+
     let topSection = document.getElementById('top_section');
     let orderCongratsTemplateContent = document.getElementById('orderCongrats').content;
     topSection.appendChild(orderCongratsTemplateContent);
@@ -23,6 +27,10 @@ function goToFinishPage() {
     let rightTemplate = document.getElementById('finishPage');
     let rightTemplateContent = rightTemplate.content;
     rightSection.appendChild(rightTemplateContent);
+
+    const scriptShipping = document.createElement('script');
+    scriptShipping.src = './shippingControl.js';
+    document.head.append(scriptShipping);
 
     var form = document.getElementById('finishForm');
     form.addEventListener("submit", function (event) {

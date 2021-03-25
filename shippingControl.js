@@ -39,7 +39,7 @@ document.getElementById('premiumShipment').onclick = function () {
     var dateTime = new Date().addHours(24);
     var dateTime2 = new Date();
     var hourFinish = dateTime.getFullYear()+"/"+(dateTime.getMonth()+1)+"/"+dateTime.getDate()+" "+ dateTime.getHours() + ":" + dateTime.getMinutes();
-    var hourStart = dateTime2.getFullYear()+"/"+(dateTime2.getMonth()+1)+"/"+dateTime2.getDate()+" "+ dateTime2.getHours() + ":" + (dateTime2.getMinutes()<10?'0':'');
+    var hourStart = dateTime2.getFullYear()+"/"+(dateTime2.getMonth()+1)+"/"+dateTime2.getDate()+" "+ dateTime2.getHours() + ":" + (dateTime2.getMinutes()<10?'0':''); //Modificar
 
     document.getElementById('firstDate').innerHTML = hourStart;
     document.getElementById('lastDate').innerHTML = hourFinish;

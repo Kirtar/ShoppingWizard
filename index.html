@@ -97,48 +97,48 @@
             <p>Your Product description</p>
             <hr />
         </div>
-            <div class="shoppingCart">
-                <div class="cartImage"><img src='./images/black.png'></div>
-                <div class="cartDetails">
-                    <h1>Basic t-shirt</h1>
-                    <p>Size
-                    <div>M</div>
-                    </p>
-                    <p>Color
-                    <div>tomato</div>
-                    </p>
-                    <p>Price:
-                    <div>15€</div>
-                    </p>
-                </div>
+        <div class="shoppingCart">
+            <div class="cartImage"><img src='./images/black.png'></div>
+            <div class="cartDetails">
+                <h1>Basic t-shirt</h1>
+                <p>Size
+                <div>M</div>
+                </p>
+                <p>Color
+                <div>tomato</div>
+                </p>
+                <p>Price:
+                <div>15€</div>
+                </p>
             </div>
+        </div>
     </template>
 
     <template id="profilePage">
-            <div class="sectionTitle">
-                <p>User profile information</p>
-                <hr />
+        <div class="sectionTitle">
+            <p>User profile information</p>
+            <hr />
+        </div>
+        <form action="" id="profileForm" class="mainProductContent">
+            <div>
+                <label for="username">Username:</label><br>
+                <input type="text" name="username" id="username" value="">
+                <p id="userNameAlert" class="inputError">El username no debe contener espacios y debe tener
+                    una longitud comprendida entre 5 y 20 carácteres</p><br><br>
+                <label for="email">Email:</label><br>
+                <input type="email" name="email" id="email" value="">
+                <p id="emailAlert" class="inputError">No es un email válido</p><br><br>
             </div>
-            <form action="" id="profileForm" class="mainProductContent">
-                <div>
-                    <label for="username">Username:</label><br>
-                    <input type="text" name="username" id="username" value="">
-                    <p id="userNameAlert" class="inputError" >El username no debe contener espacios y debe tener
-                        una longitud comprendida entre 5 y 20 carácteres</p><br><br>
-                    <label for="email">Email:</label><br>
-                    <input type="email" name="email" id="email" value="">
-                    <p id="emailAlert"  class="inputError">No es un email válido</p><br><br>
-                </div>
-                <div>
-                    <label for="password">Password:</label><br>
-                    <input type="password" name="password" id="password" value="">
-                    <p id="passAlert"  class="inputError">La contraseña debe contener mayúsculas, minúsculas,
-                        números y caracteres especiales</p><br><br>
-                    <label for="confirmPassword">Confirm password:</label><br>
-                    <input type="password" name="confirmPassword" id="confirmPassword" value="">
-                    <p id="confirmPassAlert"  class="inputError">Las contraseñas no coinciden</p><br><br>
-                </div>
-            </form>
+            <div>
+                <label for="password">Password:</label><br>
+                <input type="password" name="password" id="password" value="">
+                <p id="passAlert" class="inputError">La contraseña debe contener mayúsculas, minúsculas,
+                    números y caracteres especiales</p><br><br>
+                <label for="confirmPassword">Confirm password:</label><br>
+                <input type="password" name="confirmPassword" id="confirmPassword" value="">
+                <p id="confirmPassAlert" class="inputError">Las contraseñas no coinciden</p><br><br>
+            </div>
+        </form>
     </template>
 
     <template id="addressPage">
@@ -146,52 +146,57 @@
             <p>User address information</p>
             <hr />
         </div>
-            <form action="" id="addressForm" class="mainProductContent">
-                <div>
-                    <label for="firstName">First Name:</label><br>
-                    <input type="text" name="firstName" id="firstName" value=""><br>
-                    <p id="firstNameAlert" style="display:none;color:red">La longitud no puede ser mayor de 20 carácteres</p><br>
-                    <label for="lastName">Last Name:</label><br>
-                    <input type="text" name="lastName" id="lastName" value=""><br>
-                    <p id="lastNameAlert" style="display:none;color:red">La longitud no puede ser mayor de 20 carácteres</p><br>
-                    <label for="birthday">Birthday:</label><br>
-                    <input type="date" name="birthday" id="birthday" value=""><br>
-                    <p id="birthdayAlert" style="display:none;color:red">Aviso fecha incorrecta (?)</p><br>
-                    <label for="postCode">Post Code:</label><br>
-                    <input type="text" name="postCode" id="postCode" value=""><br>
-                    <p id="postCodeAlert1" style="display:none;color:red">Deben ser valores numéricos</p>
-                    <p id="postCodeAlert2" style="display:none;color:red">La longitud debe ser igual a 5 cifras</p><br>
-                </div>
-                <div>
-                    <label for="address1">Address 1:</label><br>
-                    <input type="text" name="address1" id="address1" value=""><br>
-                    <p id="address1Alert" style="display:none;color:red">La longitud no puede ser mayor de 50 carácteres</p><br>
-                    <label for="address2">Address 2:</label><br>
-                    <input type="text" name="address2" id="address2" value=""><br>
-                    <p id="address2Alert" style="display:none;color:red">La longitud no puede ser mayor de 50 carácteres</p><br>
-                    <label>Country:</label><br>
-                    <select id="countries" class="selectStyle">
-                        <option value="0">Andorra</option>
-                        <option value="1">España</option>
-                        <option value="2">Francia</option>
-                        <option value="3">Alemania</option>
-                        <option value="4">Grecia</option>
-                    </select><br>
-                    <label for="phone">Phone:</label><br>
-                    <select id="prePhone" class="selectStyle">
-                        <option value="+376">AND</option>
-                        <option value="+34">ESP</option>
-                        <option value="+33">FRA</option>
-                        <option value="+49">DEU</option>
-                        <option value="+30">GRC</option>
-                    </select><br>
-                    <input type="tel" name="phone" id="phone" value="">  
-                    <p id="phoneAlert1" style="display:none;color:red">Deben ser valores numéricos</p>
-                    <p id="phoneAlert2" style="display:none;color:red">Debe tener 9 cifras</p><br>
-                    <input class="checkboxInput" type="checkbox" id="checkAddress" name="checkAddress" value="acceptAddress">
-                    <label class="labelCheckbox" for="checkAddress">This is my regular address.</label><br>
-                </div>
-            </form>
+        <form action="" id="addressForm" class="mainProductContent">
+            <div>
+                <label for="firstName">First Name:</label><br>
+                <input type="text" name="firstName" id="firstName" value=""><br>
+                <p id="firstNameAlert" style="display:none;color:red">La longitud no puede ser mayor de 20 carácteres
+                </p><br>
+                <label for="lastName">Last Name:</label><br>
+                <input type="text" name="lastName" id="lastName" value=""><br>
+                <p id="lastNameAlert" style="display:none;color:red">La longitud no puede ser mayor de 20 carácteres</p>
+                <br>
+                <label for="birthday">Birthday:</label><br>
+                <input type="date" name="birthday" id="birthday" value=""><br>
+                <p id="birthdayAlert" style="display:none;color:red">Aviso fecha incorrecta (?)</p><br>
+                <label for="postCode">Post Code:</label><br>
+                <input type="text" name="postCode" id="postCode" value=""><br>
+                <p id="postCodeAlert1" style="display:none;color:red">Deben ser valores numéricos</p>
+                <p id="postCodeAlert2" style="display:none;color:red">La longitud debe ser igual a 5 cifras</p><br>
+            </div>
+            <div>
+                <label for="address1">Address 1:</label><br>
+                <input type="text" name="address1" id="address1" value=""><br>
+                <p id="address1Alert" style="display:none;color:red">La longitud no puede ser mayor de 50 carácteres</p>
+                <br>
+                <label for="address2">Address 2:</label><br>
+                <input type="text" name="address2" id="address2" value=""><br>
+                <p id="address2Alert" style="display:none;color:red">La longitud no puede ser mayor de 50 carácteres</p>
+                <br>
+                <label>Country:</label><br>
+                <select id="countries" class="selectStyle">
+                    <option value="0">Andorra</option>
+                    <option value="1">España</option>
+                    <option value="2">Francia</option>
+                    <option value="3">Alemania</option>
+                    <option value="4">Grecia</option>
+                </select><br>
+                <label for="phone">Phone:</label><br>
+                <select id="prePhone" class="selectStyle">
+                    <option value="+376">AND</option>
+                    <option value="+34">ESP</option>
+                    <option value="+33">FRA</option>
+                    <option value="+49">DEU</option>
+                    <option value="+30">GRC</option>
+                </select><br>
+                <input type="tel" name="phone" id="phone" value="">
+                <p id="phoneAlert1" style="display:none;color:red">Deben ser valores numéricos</p>
+                <p id="phoneAlert2" style="display:none;color:red">Debe tener 9 cifras</p><br>
+                <input class="checkboxInput" type="checkbox" id="checkAddress" name="checkAddress"
+                    value="acceptAddress">
+                <label class="labelCheckbox" for="checkAddress">This is my regular address.</label><br>
+            </div>
+        </form>
     </template>
 
     <template id="shippingPage">
@@ -201,16 +206,20 @@
         </div>
         <form class="shippingForm" id="shippingForm">
             <div class="radioButtonForm">
-                <label><input type="radio" class="radioButtonInput" id="freeShipment" name="shipment" value="freeShipment">Free Shipment 72h</label><br>
-                <label><input type="radio" class="radioButtonInput" id="extraShipment" name="shipment" value="extraShipment">Extra Shipment 48h</label><br>
-                <label><input type="radio" class="radioButtonInput" id="premiumShipment" name="shipment" value="premiumShipment">Premium Shipment 24h</label>
+                <label><input type="radio" class="radioButtonInput" id="freeShipment" name="shipment"
+                        value="freeShipment">Free Shipment 72h</label><br>
+                <label><input type="radio" class="radioButtonInput" id="extraShipment" name="shipment"
+                        value="extraShipment">Extra Shipment 48h</label><br>
+                <label><input type="radio" class="radioButtonInput" id="premiumShipment" name="shipment"
+                        value="premiumShipment">Premium Shipment 24h</label>
             </div>
             <div class="estimatedDeliveryDate" id="timeDeliver" style="visibility:hidden;">
                 <h4><strong>Your order will arrive:</strong></h4>
                 <p>Estimated delivery date</p>
                 <p>Between <strong id="firstDate"></strong> and <strong id="lastDate"></strong></p>
             </div>
-            <label><input type="checkbox" class="checkboxInput" id="isAGift" name="isAGift" value="isAGift">Is it a gift?</label>
+            <label><input type="checkbox" class="checkboxInput" id="isAGift" name="isAGift" value="isAGift">Is it a
+                gift?</label>
             <div id="gift" style="visibility:hidden;">
                 <p><strong>Gift message</strong></p>
                 <textarea id="giftMessage" name="giftMessage" rows="4" maxlength="200"></textarea>
@@ -233,25 +242,20 @@
             <p>Your purchase information</p>
             <hr />
         </div>
-        <aside class="mainProductContent">
-            <h1>Your order</h1>
-            <p>T-Shirt
-            <div>XX€</div>
-            </p>
-            <p>XXX Shipping
-            <div>XX€</div>
-            </p>
-            <p>Total:
-            <div>YY€</div>
-            </p>
+        <aside class="purchaseContent">
+            <h1>Your order</h1><br>
+            <p>T-Shirt<div id="tshirtPrice">`${tshirtPrice}`</div></p><br>
+            <div id="selectedShipping">`${selectedShipping}`</div>
+            <div id="selectedShippingCost">`${selectedShippingCost}`</div><br>
+            <p>Total:<div id="totalAmount">`${totalAmount}`</div></p><br>
             <p><strong>Your order will arrive:</strong></p>
             <p>Estimated delivery date</p>
-            <p>`Beetween <strong> ${initialDate}</strong> and <strong> ${finalDate}.</strong>`</p>
+            <p>Between <strong id="firstDate">`${soonerEstimatedDate}`</strong> and <strong id="lastDate">`${laterEstimatedDate}`</strong></p><br>
             <form action="" id="finishForm">
                 <input type="checkbox" id="termsCheckbox" name="termsCheckbox" value="termsCheckbox">
                 <label>I have read and accept the terms and conditions</label>
-                <div id="termsAlert">Please accept the terms and condicions</div>
-                <input type="submit" id="buyNowButton" class="btn" value="Buy now" form="finishForm">
+                <div id="termsAlert" class="inputError">Please accept the terms and condicions</div><br>
+                <input type="submit" id="buyNowFinishButton" class="btn" value="Buy now" form="finishForm">
             </form>
         </aside>
     </template>

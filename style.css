@@ -42,7 +42,7 @@ select {
   font-size: 14px;
 }
 
-#buyNowButton {
+#buyNowButton, #buyNowFinishButton {
   background: var(--basicBlue);
   padding: 8px 30px;
   color: #fff;
@@ -85,7 +85,7 @@ section#left_section {
 }
 section#right_section {
   align-items: center;
-  justify-content: center;
+  justify-content: center; /*Modificar aliniamiento*/
   padding: 0% 2% 0% 0%;
 }
 header {
@@ -360,3 +360,8 @@ div.shoppingCart > div {
   border: 0;
   padding: 2px;
 }
+
+#termsCheckbox {
+  min-width: auto;
+  width: auto;
+} 
