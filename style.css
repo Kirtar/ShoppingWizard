@@ -26,10 +26,6 @@ label {
   font-size: 10px;
 }
 
-/*
-#checkAddress{
-  width: 20px;
-}*/
 
 input,
 select {
@@ -42,11 +38,40 @@ select {
   font-size: 14px;
 }
 
+#colorProduct{
+  display:flex;
+  justify-content: space-around;
+}
+#colorProduct>div{
+    width: 20px;
+    height: 20px;
+    border-radius: 20px 20px 20px 20px;
+}
+
+#product1{
+  background-color: #d4c118;
+}
+#product2{
+  background-color: #189fd4;
+}
+#product3{
+  background-color: #9f18d4;
+}
+#product4{
+  background-color: #d41821;
+}
+#product5{
+  background-color: #18d421;
+}
+
 #buyNowButton {
+  margin-top: 10%;
   background: var(--basicBlue);
-  padding: 8px 30px;
+  padding: 4% 0%;
   color: #fff;
   font-size: small;
+  width: 20px;
+  min-width: 80px;
 }
 
 body {
@@ -69,9 +94,13 @@ body > main {
   margin-bottom: 1%;
 }
 
+#orderCongrats{
+  padding: 0% 2% 0% 2%;
+  margin: 2%; 
+}
+
 #left_section,
 #right_section {
-  /*width: 50%;revisar*/
   display: inline-flex;
   flex-wrap: wrap;
   flex: 1;
@@ -79,15 +108,7 @@ body > main {
   padding: 0% 2% 0% 2%;
   margin: 2%;
 }
-section#left_section {
-  align-items: center;
-  justify-content: center;
-}
-section#right_section {
-  align-items: center;
-  justify-content: center;
 
-}
 header {
   margin: auto;
   padding: 0;
@@ -124,26 +145,47 @@ body > main > section > aside {
   width: 100%;
   display: inline-flex;
 }
+.mainContent {
+  width: 60%;
+  justify-content: center;
+}
+.mainContent>div {
+
+  height: auto;
+  padding: 2%;
+  min-width: 150px;
+}
 
 .mainProductContent {
   display: inline-flex;
   align-items: stretch;
-  justify-content: center;
   flex-wrap: wrap;
   width: 100%;
 }
 .mainProductContent > div {
   width: 48%;
   height: auto;
-  padding: 0% 2%;
   min-width: 150px;
 }
-.smallProductImage {
-  width: 25%;
-  border: 2px 2px 2px 2px;
-  background-color: aquamarine;
-  height: 50px;
-  border: 2px solid blue;
+
+.ProductContent {
+  display: inline-flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.ProductContent > div {
+  padding: 0% 2%;
+  min-width: 120px;
+  display: flex;
+  margin: 2% 0%;
+}
+.ProductContent > div > div{
+  width: 70px;
+ /* padding: 4%; */
+}
+.imgMini {
+  height: 60px;
+  margin: 20%;
 }
 
 .container {
