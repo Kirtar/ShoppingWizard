@@ -11,6 +11,17 @@
 </head>
 
 <body>
+    <div id="floatingCard" class="shop-card" style="display: none;">
+        <div class="desc">
+            You started registering
+        </div>
+        <div id="minutesCount" >
+            <strong>${time} 3 minustes ago</strong>
+        </div>
+        <div id="alertMessage" class="desc">
+            Hurry up!
+        </div>
+    </div>
     <header>
         <img src="./images/logo.jpeg">
     </header>
@@ -35,61 +46,43 @@
                 <div class="circle"></div>
                 <div class="circle"></div>
             </div>
-            <div id="floatingCard" class="shop-card">
-                <div class="desc">
-                    You started registering
-                </div>
-                <div>
-                    <strong>${time} 3 minustes ago</strong>
-                </div>
-                <div class="desc">
-                    Hurry up!
-                </div>
-                <div class="alert-Time">
-                    This message will disappear in 5 sec
-                </div>
-            </div>
         </div>
     </template>
     <template id="productCard">
-        <picture>
-            <div class="mainProductImage">
+        <div class="ProductContent">
+            <div>
                 <img src='./images/black.png'>
             </div>
-            <div class="smallList">
-                <div class="smallProductImage">small</div>
-                <div class="smallProductImage">small</div>
-                <div class="smallProductImage">small</div>
-                <div class="smallProductImage">small</div>
+            <div>
+                <div><img class="imgMini" src='./images/black.png'></div>
+                <div><img class="imgMini" src='./images/black.png'></div>
+                <div><img class="imgMini" src='./images/black.png'></div>
+                <div><img class="imgMini" src='./images/black.png'></div>
             </div>
-        </picture>
+        </div>
     </template>
     <template id="mainPage">
-        <aside class="mainProductContent">
-            <h1>Basic Black</h1>
-            <p>Price</p>
-            <p>12€</p>
-            <div style="display: inline-flex;">
-                <p>Size:</p>
-                <select name="" id="">
-                    <option value="">XS</option>
-                    <option value="">S</option>
-                    <option value="">M</option>
-                    <option value="">L</option>
-                    <option value="">XL</option>
-                </select>
-            </div>
-            </div>
+        <div class="mainContent">
+            <h1>Basic Black</h1><br>
+            <p>Price: <span>12€</span></p>
+            <p>Size:</p>
+            <select name="" id="">
+                <option value="">XS</option>
+                <option value="">S</option>
+                <option value="">M</option>
+                <option value="">L</option>
+                <option value="">XL</option>
+            </select>
             <p>Color Picker:</p>
-            <div>
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
+            <div id="colorProduct">
+                <div id="product1"></div>
+                <div id="product2"></div>
+                <div id="product3"></div>
+                <div id="product4"></div>
+                <div id="product5"></div>
             </div>
             <input type="submit" id="buyNowButton" value="BUY">
-        </aside>
+        </div>
     </template>
 
     <template id="shoppingCart">

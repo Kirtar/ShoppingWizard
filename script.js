@@ -1,6 +1,20 @@
 var buyButton = document.getElementById("buyNowButton");
 buyButton.onclick = goToProfilePage;
 
+var timeAlertMessage = [
+    'Don\'t worry, you have 4 minutes left',
+    'Tic Tac, Tic Tac',
+    'Get a move on!',
+    'Hurry Up!'
+];
+var alertCard = document.getElementById('floatingCard');
+var alertCardMinutes = document.getElementById('minutesCount');
+var alertCardMessage = document.getElementById('alertMessage');
+var registrationStart = 0;
+var elapsedMinutes = 0;
+var registrationFinish = 0;
+var registationTime = 0;
+
 function finishPurchase() {
     let bottomSection = document.getElementById('bottom_section');
     bottomSection.innerHTML = 'Your registration took: xx min and yy sec';
@@ -95,12 +109,45 @@ function goToAddressPage() {
     });
 };
 
+function showTimeAlert(){
+    alertCardMinutes.innerHTML=`<strong>${elapsedMinutes} minustes ago</strong>`;
+    alertCardMessage.innerHTML=timeAlertMessage[elapsedMinutes - 1];
+    alertCard.style.display="";
+    setTimeout(function(){
+        alertCard.style.display="none";
+    }, 5000);
+};
+
+function initializeMinuteAlert(){
+    setInterval(function(){
+        elapsedMinutes++;
+        showTimeAlert();
+    }, 60000);
+};
+
+function initializeTimeCounter(){
+    registrationStart = Date.now();
+};
+
+function initializeCountDown(){
+    setTimeout(function(){
+        alert('You time is over!');
+        location.reload();
+    }, 300000);
+};
+
+function initializeRegistrationProcess(){
+    initializeCountDown();
+    initializeTimeCounter();
+    initializeMinuteAlert();
+};
+
 function goToProfilePage() {
+    initializeRegistrationProcess();
+    
     let leftSection = document.getElementById('left_section');
-    //leftSection.removeChild(leftSection.firstElementChild);
     leftSection.innerHTML="";
     let rightSection = document.getElementById('right_section');
-    //rightSection.removeChild(rightSection.firstElementChild);
     rightSection.innerHTML="";
 
     let topTemplate = document.getElementById('progressBar');
