@@ -7,7 +7,7 @@ Date.prototype.addHours = function (h) {
 
 document.getElementById('freeShipment').onclick = function () {
     option = document.getElementById('freeShipment').value;
-    document.getElementById('timeDeliver').style.display = "";
+    document.getElementById('timeDeliver').style.visibility = "";
 
     var dateTime = new Date().addHours(72);
     var dateTime2 = new Date();
@@ -21,7 +21,7 @@ document.getElementById('freeShipment').onclick = function () {
 
 document.getElementById('extraShipment').onclick = function () {
     option = document.getElementById('extraShipment').value;
-    document.getElementById('timeDeliver').style.display = "";
+    document.getElementById('timeDeliver').style.visibility = "";
 
     var dateTime = new Date().addHours(48);
     var dateTime2 = new Date();
@@ -34,7 +34,7 @@ document.getElementById('extraShipment').onclick = function () {
 
 document.getElementById('premiumShipment').onclick = function () {
     option = document.getElementById('premiumShipment').value;
-    document.getElementById('timeDeliver').style.display = "";
+    document.getElementById('timeDeliver').style.visibility = "";
 
     var dateTime = new Date().addHours(24);
     var dateTime2 = new Date();
