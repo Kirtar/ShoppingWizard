@@ -200,28 +200,6 @@
             <p>Shipping information</p>
             <hr />
         </div>
-<<<<<<< HEAD
-        <form id="shippingForm">
-            <input type="radio" id="freeShipment" name="shipment" value="freeShipment">
-            <label>Free Shipment 72h</label><br>
-            <input type="radio" id="extraShipment" name="shipment" value="extraShipment">
-            <label>Extra Shipment 48h</label><br>
-            <input type="radio" id="premiumShipment" name="shipment" value="premiumShipment">
-            <label>Premium Shipment 24h</label>
-            <div class="estimatedDeliveryDate" id="timeDeliver" style="display: none;">
-                <p><strong>Your order will arrive:</strong></p>
-                <p>Estimated delivery date</p>
-                <p>Between <strong id="firstDate"></strong> and <strong id="lastDate"></strong></p>
-            </div><br>
-            <input type="checkbox" id="isAGift" name="isAGift" value="isAGift">
-            <label>Is it a gift?</label>
-            <div id="gift" style="display: none;">
-                <h3>Gift message</h3>
-                <textarea id="w3review" name="w3review" rows="4" cols="50">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </textarea>
-                <h3>Gift wrapper image</h3>
-=======
         <form class="shippingForm" id="shippingForm">
             <div class="radioButtonForm">
                 <label><input type="radio" class="radioButtonInput" id="freeShipment" name="shipment" value="freeShipment">Free Shipment 72h</label><br>
@@ -238,8 +216,7 @@
                 <p><strong>Gift message</strong></p>
                 <textarea id="w3review" name="w3review" rows="4" cols="50">Lorem ipsum</textarea>
                 <p><strong>Gift wrapper image</strong></p>
->>>>>>> develop
-                <input type="file" id="giftImage" name="giftImage" value="giftImage">
+                <input type="file" id="giftImage" name="giftImage" value="giftImage" accept=".jpg,.png">
             </div>
         </form>
     </template>
