@@ -157,17 +157,10 @@
                     <label for="birthday">Birthday:</label><br>
                     <input type="date" name="birthday" id="birthday" value=""><br>
                     <p id="birthdayAlert" style="display:none;color:red">Aviso fecha incorrecta (?)</p><br>
-                    <label>Country:</label><br>
-                    <select id="countries" class="selectStyle">
-                        <option value="0">Andorra</option>
-                        <option value="1">España</option>
-                        <option value="2">Francia</option>
-                        <option value="3">Alemania</option>
-                        <option value="4">Grecia</option>
-                    </select><br>
-                    <input class="checkboxInput" type="checkbox" id="checkAddress" name="checkAddress" value="acceptAddress">
-                    <label class="labelCheckbox" for="checkAddress">This is my regular address.</label>
-                    
+                    <label for="postCode">Post Code:</label><br>
+                    <input type="text" name="postCode" id="postCode" value=""><br>
+                    <p id="postCodeAlert1" style="display:none;color:red">Deben ser valores numéricos</p>
+                    <p id="postCodeAlert2" style="display:none;color:red">La longitud debe ser igual a 5 cifras</p><br>
                 </div>
                 <div>
                     <label for="address1">Address 1:</label><br>
@@ -176,10 +169,14 @@
                     <label for="address2">Address 2:</label><br>
                     <input type="text" name="address2" id="address2" value=""><br>
                     <p id="address2Alert" style="display:none;color:red">La longitud no puede ser mayor de 50 carácteres</p><br>
-                    <label for="postCode">Post Code:</label><br>
-                    <input type="text" name="postCode" id="postCode" value=""><br>
-                    <p id="postCodeAlert1" style="display:none;color:red">Deben ser valores numéricos</p>
-                    <p id="postCodeAlert2" style="display:none;color:red">La longitud debe ser igual a 5 cifras</p><br>
+                    <label>Country:</label><br>
+                    <select id="countries" class="selectStyle">
+                        <option value="0">Andorra</option>
+                        <option value="1">España</option>
+                        <option value="2">Francia</option>
+                        <option value="3">Alemania</option>
+                        <option value="4">Grecia</option>
+                    </select><br>
                     <label for="phone">Phone:</label><br>
                     <select id="prePhone" class="selectStyle">
                         <option value="+376">AND</option>
@@ -187,10 +184,12 @@
                         <option value="+33">FRA</option>
                         <option value="+49">DEU</option>
                         <option value="+30">GRC</option>
-                    </select><br><br>
+                    </select><br>
                     <input type="tel" name="phone" id="phone" value="">  
                     <p id="phoneAlert1" style="display:none;color:red">Deben ser valores numéricos</p>
                     <p id="phoneAlert2" style="display:none;color:red">Debe tener 9 cifras</p><br>
+                    <input class="checkboxInput" type="checkbox" id="checkAddress" name="checkAddress" value="acceptAddress">
+                    <label class="labelCheckbox" for="checkAddress">This is my regular address.</label><br>
                 </div>
             </form>
     </template>
