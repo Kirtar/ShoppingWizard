@@ -6,7 +6,6 @@
   box-sizing: border-box;
   font-family: "Montserrat";
   overflow-x: hidden;
-  
 }
 :root {
   --basicBlue: #3498db;
@@ -16,13 +15,14 @@
 
 textarea {
   resize: none;
+  width: 90%;
 }
 
 label {
   font-weight: bold;
   font-size: 16px;
 }
-.labelCheckbox{
+.labelCheckbox {
   font-size: 10px;
 }
 
@@ -31,7 +31,8 @@ label {
   width: 20px;
 }*/
 
-input, select {
+input,
+select {
   border-radius: 5px;
   background-color: var(--lightBlue);
   padding: 3% 1%;
@@ -39,10 +40,7 @@ input, select {
   width: 90%;
   border: 0;
   font-size: 14px;
-
 }
-
-
 
 #buyNowButton {
   background: var(--basicBlue);
@@ -66,27 +64,26 @@ body > main {
   height: 86%;
 }
 
-#top_section{
+#top_section {
   width: 100%;
   margin-bottom: 1%;
 }
 
-#left_section, #right_section {
+#left_section,
+#right_section {
   /*width: 50%;revisar*/
   display: inline-flex;
   flex-wrap: wrap;
-  flex:1;
+  flex: 1;
   min-width: 300px;
   padding: 0% 2% 0% 2%;
   margin: 2%;
 }
-section#left_section{
+section#left_section {
   align-items: center;
   justify-content: center;
-
-
 }
-section#right_section{
+section#right_section {
   align-items: center;
   justify-content: center;
   padding: 0% 2% 0% 0%;
@@ -106,7 +103,6 @@ footer {
   background-color: darkgray;
 }
 
-
 body > main > section > aside {
   width: 50%;
   min-width: 300px;
@@ -116,7 +112,7 @@ body > main > section > aside {
   width: 100%;
 }
 
-.sectionTitle hr{
+.sectionTitle hr {
   height: 5px;
   width: 40%;
   border: 0;
@@ -128,14 +124,14 @@ body > main > section > aside {
   display: inline-flex;
 }
 
-.mainProductContent{
+.mainProductContent {
   display: inline-flex;
   align-items: stretch;
   justify-content: center;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   width: 100%;
 }
-.mainProductContent > div{
+.mainProductContent > div {
   width: 48%;
   height: auto;
   padding: 0% 2%;
@@ -228,11 +224,11 @@ body > main > section > aside {
   /*margin-top: 2%;*/
   font-size: 14px;
 }
-#clear{
+#clear {
   border-radius: 5px;
   background-color: var(--basicGrey);
   padding: 0;
-  color:#3498db;
+  color: #3498db;
   border: 2px;
   border-style: solid;
   border-color: #3498db;
@@ -242,11 +238,11 @@ body > main > section > aside {
   height: 40px;
   font-weight: bold;
 }
-#next{
+#next {
   border-radius: 5px;
   background-color: var(--basicBlue);
   padding: 0;
-  color:#fff;
+  color: #fff;
   border: 2px;
   border-style: solid;
   border-color: #3498db;
@@ -256,7 +252,7 @@ body > main > section > aside {
   height: 40px;
   font-weight: bold;
 }
-#bottom_section{
+#bottom_section {
   width: 100%;
   height: 60px;
   display: flex;
@@ -278,36 +274,36 @@ body > main > section > aside {
 }
 
 /*   shoppingCart   */
-.shoppingCart{
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0 0 10px rgba(41, 41, 40, 0.637);
-    border-radius: 10px;
-    width: 100%;
-    padding: 2%;
-    height: 300px;
-    display: inline-flex;
-    /* align-items: stretch; */
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-bottom: 2%;
+.shoppingCart {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 10px rgba(41, 41, 40, 0.637);
+  border-radius: 10px;
+  width: 100%;
+  padding: 2%;
+  height: 300px;
+  display: inline-flex;
+  /* align-items: stretch; */
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 2%;
 }
-div.shoppingCart > div{
+div.shoppingCart > div {
   width: 48%;
   padding: 0% 2%;
   min-width: 150px;
 }
-.cartImage > img{
+.cartImage > img {
   height: 160px;
 }
 /*   CSS ADDRESS   */
-.prePhoneInLine{
+.prePhoneInLine {
   display: flex;
   align-items: center;
 }
-.selectStyle{
-  background-color:var(--basicBlue);
-  color:#fff;
+.selectStyle {
+  background-color: var(--basicBlue);
+  color: #fff;
 }
 .radioButtonInput,
 .checkboxInput {
@@ -334,7 +330,7 @@ div.shoppingCart > div{
   width: 260px;
   min-width: 100px;
   background: #ebdb07;
-  box-shadow: 0 10px 20px rgba(0,0,0,.3);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   border-radius: 5px;
   padding: 1% 1%;
@@ -346,17 +342,17 @@ div.shoppingCart > div{
   font-size: 18px;
   opacity: 0.8;
 }
-.alert-Time{
+.alert-Time {
   margin-top: 3%;
   font-size: 12px;
   opacity: 0.6;
 }
 
 /*  */
-.inputError{
+.inputError {
   font-size: 10px;
   color: #000000;
-  background-color:#f0ab9c;
+  background-color: #f0ab9c;
   display: none;
   min-width: 140px;
   width: 90%;
