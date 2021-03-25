@@ -97,7 +97,6 @@
             <p>Your Product description</p>
             <hr />
         </div>
-        <picture>
             <div class="shoppingCart">
                 <div class="cartImage"><img src='./images/black.png'></div>
                 <div class="cartDetails">
@@ -116,26 +115,29 @@
     </template>
 
     <template id="profilePage">
-        <aside class="mainProductContent">
             <div class="sectionTitle">
                 <p>User profile information</p>
                 <hr />
             </div>
             <form action="" id="profileForm" class="mainProductContent">
-                <label for="username">Username:</label><br>
-                <input type="text" name="username" id="username" value="">
-                <p id="userNameAlert" style="display:none;color:red">El username no debe contener espacios y debe tener
-                    una longitud comprendida entre 5 y 20 carácteres</p><br>
-                <label for="email">Email:</label><br>
-                <input type="email" name="email" id="email" value="">
-                <p id="emailAlert" style="display:none;color:red">No es un email válido</p><br><br>
-                <label for="password">Password:</label><br>
-                <input type="password" name="password" id="password" value="">
-                <p id="passAlert" style="display:none;color:red">La contraseña debe contener mayúsculas, minúsculas,
-                    números y caracteres especiales</p><br>
-                <label for="confirmPassword">Confirm password:</label><br>
-                <input type="password" name="confirmPassword" id="confirmPassword" value="">
-                <p id="confirmPassAlert" style="display:none;color:red">Las contraseñas no coinciden</p><br><br>
+                <div>
+                    <label for="username">Username:</label><br>
+                    <input type="text" name="username" id="username" value="">
+                    <p id="userNameAlert" class="inputError" >El username no debe contener espacios y debe tener
+                        una longitud comprendida entre 5 y 20 carácteres</p><br><br>
+                    <label for="email">Email:</label><br>
+                    <input type="email" name="email" id="email" value="">
+                    <p id="emailAlert"  class="inputError">No es un email válido</p><br><br>
+                </div>
+                <div>
+                    <label for="password">Password:</label><br>
+                    <input type="password" name="password" id="password" value="">
+                    <p id="passAlert"  class="inputError">La contraseña debe contener mayúsculas, minúsculas,
+                        números y caracteres especiales</p><br><br>
+                    <label for="confirmPassword">Confirm password:</label><br>
+                    <input type="password" name="confirmPassword" id="confirmPassword" value="">
+                    <p id="confirmPassAlert"  class="inputError">Las contraseñas no coinciden</p><br><br>
+                </div>
             </form>
     </template>
 
@@ -163,8 +165,9 @@
                         <option value="3">Alemania</option>
                         <option value="4">Grecia</option>
                     </select><br>
+                    <input class="checkboxInput" type="checkbox" id="checkAddress" name="checkAddress" value="acceptAddress">
                     <label class="labelCheckbox" for="checkAddress">This is my regular address.</label>
-                    <input class="inputCheckbox" type="checkbox" id="checkAddress" name="checkAddress" value="acceptAddress">
+                    
                 </div>
                 <div>
                     <label for="address1">Address 1:</label><br>
@@ -193,30 +196,31 @@
     </template>
 
     <template id="shippingPage">
-        <p>Shipping information</p>
-        <hr/>
-        <form class="mainProductContent" id="shippingForm">
-            <input type="radio" id="freeShipment" name="shipment" value="freeShipment">
-            <label>Free Shipment 72h</label><br>
-            <input type="radio" id="extraShipment" name="shipment" value="extraShipment">
-            <label>Extra Shipment 48h</label><br>
-            <input type="radio" id="premiumShipment" name="shipment" value="premiumShipment">
-            <label>Premium Shipment 24h</label>
-            <div class="estimatedDeliveryDate">
-                <p><strong>Your order will arrive:</strong></p>
-                <p>Estimated delivery date</p>
-                <p>`Between <strong> ${initialDate}</strong> and <strong> ${finalDate}.</strong>`</p>
+        <div class="sectionTitle">
+            <p>Shipping information</p>
+            <hr />
+        </div>
+        <form class="shippingForm" id="shippingForm">
+            <div class="radioButtonForm">
+                <label><input type="radio" class="radioButtonInput" id="freeShipment" name="shipment" value="freeShipment">Free Shipment 72h</label><br>
+                <label><input type="radio" class="radioButtonInput" id="extraShipment" name="shipment" value="extraShipment">Extra Shipment 48h</label><br>
+                <label><input type="radio" class="radioButtonInput" id="premiumShipment" name="shipment" value="premiumShipment">Premium Shipment 24h</label>
             </div>
-            <input type="checkbox" id="isAGift" name="isAGift" value="isAGift">
-            <label>Is it a gift?</label>
-            <h3>Gift message</h3>
-            <textarea id="w3review" name="w3review" rows="4" cols="50">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </textarea>
-            <h3>Gift wrapper image</h3>
-            <input type="file" id="giftImage" name="giftImage" value="giftImage">
+            <div class="estimatedDeliveryDate" id="timeDeliver">
+                <h4><strong>Your order will arrive:</strong></h4>
+                <p>Estimated delivery date</p>
+                <p>Between <strong id="firstDate"></strong> and <strong id="lastDate"></strong></p>
+            </div>
+            <label><input type="checkbox" class="checkboxInput" id="isAGift" name="isAGift" value="isAGift">Is it a gift?</label>
+            <div id="gift" style="visibility:hidden;">
+                <p><strong>Gift message</strong></p>
+                <textarea id="w3review" name="w3review" rows="4" cols="50">Lorem ipsum</textarea>
+                <p><strong>Gift wrapper image</strong></p>
+                <input type="file" id="giftImage" name="giftImage" value="giftImage">
+            </div>
         </form>
     </template>
+
 
     <template id="orderCongrats">
         <div id="orderCongrats">

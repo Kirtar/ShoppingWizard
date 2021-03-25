@@ -8,6 +8,7 @@ function finishPurchase() {
     let topSection = document.getElementById('top_section');
     let orderCongratsTemplateContent = document.getElementById('orderCongrats').content;
     topSection.appendChild(orderCongratsTemplateContent);
+    topSection.style.marginBottom = "20px";
 };
 
 function goToFinishPage() {
@@ -64,7 +65,8 @@ function goToShippingPage() {
 
 function goToAddressPage() {
     let rightSection = document.getElementById('right_section');
-    rightSection.removeChild(rightSection.firstElementChild);
+    //rightSection.removeChild(rightSection.firstElementChild);
+    rightSection.innerHTML="";
 
     let rightTemplate = document.getElementById('addressPage');
     let rightTemplateContent = rightTemplate.content;
@@ -86,9 +88,11 @@ function goToAddressPage() {
 
 function goToProfilePage() {
     let leftSection = document.getElementById('left_section');
-    leftSection.removeChild(leftSection.firstElementChild);
+    //leftSection.removeChild(leftSection.firstElementChild);
+    leftSection.innerHTML="";
     let rightSection = document.getElementById('right_section');
-    rightSection.removeChild(rightSection.firstElementChild);
+    //rightSection.removeChild(rightSection.firstElementChild);
+    rightSection.innerHTML="";
 
     let topTemplate = document.getElementById('progressBar');
     let topTemplateContent = topTemplate.content;
