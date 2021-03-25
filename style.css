@@ -86,7 +86,7 @@ section#left_section {
 section#right_section {
   align-items: center;
   justify-content: center;
-  padding: 0% 2% 0% 0%;
+
 }
 header {
   margin: auto;
@@ -95,8 +95,6 @@ header {
   width: 100%;
   min-height: 100px;
   background-color: black;
-  display: inline-flex;
-  justify-content: space-between;
 }
 
 
@@ -326,10 +324,9 @@ div.shoppingCart > div {
 /*   Floating Card   */
 
 .shop-card {
-  position: static;
-  top: 8%;
-  left:80%;
- 
+  position: fixed;
+  top: 2%;
+  right: 2%;
   width: 260px;
   min-width: 80px;
   background: #ebdb07;
@@ -340,7 +337,7 @@ div.shoppingCart > div {
   margin: 1%;
   text-align: center;
   z-index: 1;
-  opacity: 0.8;
+  opacity: 0.999999;
 }
 .desc {
   font-size: 18px;
