@@ -5,10 +5,6 @@ function finishPurchase() {
     let bottomSection = document.getElementById('bottom_section');
     bottomSection.innerHTML = 'Your registration took: xx min and yy sec';
 
-    const scriptShipping = document.createElement('script');
-    scriptShipping.src = './shippingControl.js';
-    document.head.append(scriptShipping);
-
     let topSection = document.getElementById('top_section');
     let orderCongratsTemplateContent = document.getElementById('orderCongrats').content;
     topSection.appendChild(orderCongratsTemplateContent);
@@ -28,22 +24,27 @@ function goToFinishPage() {
     let rightTemplateContent = rightTemplate.content;
     rightSection.appendChild(rightTemplateContent);
 
-    const scriptShipping = document.createElement('script');
-    scriptShipping.src = './shippingControl.js';
-    document.head.append(scriptShipping);
+    const scriptFinish = document.createElement('script');
+    scriptFinish.src = './finishControl.js';
+    document.head.append(scriptFinish)
 
     var form = document.getElementById('finishForm');
     form.addEventListener("submit", function (event) {
         event.preventDefault();
-        finishPurchase();
-        currentActive++;
-        if (currentActive > circles.length) currentActive = circles.length;
-        if (currentActive !== 4 || progressStage == 1) {
-            update();
-        } else if (currentActive == 4) {
-            progressStage++;
+        if(termsCheckbox.checked){
+            finishPurchase();
+            currentActive++;
+            if (currentActive > circles.length) currentActive = circles.length;
+            if (currentActive !== 4 || progressStage == 1) {
+                update();
+            } else if (currentActive == 4) {
+                progressStage++;
+            }
+            form.remove();
+        } else {
+            let termsAlert = document.getElementById('termsAlert');
+            termsAlert.style.display = "block";
         }
-        form.remove();
     });
 
 };
