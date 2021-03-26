@@ -13,7 +13,33 @@ var alertCardMessage = document.getElementById('alertMessage');
 var registrationStart = 0;
 var elapsedMinutes = 0;
 var registrationFinish = 0;
-var registationTime = 0;
+var registrationTime = 0;
+var selectedProductSize = 'XS';
+var selectedProductPrice = 12;
+var selectedColor = 'black';
+var colorPrices = {
+    'black' : 12,
+    'red' : 18,
+    'blue' : 18
+};
+var colorPalette = {
+    'red' : '#dd473c',
+    'blue' : '#6b9ed4',
+    'black' : '#323232'
+};
+var soonestDeliveryDateTime = 0;
+var latestDeliveryDateTime = 0;
+var selectedShippingMethod = '';
+var shippingMethodNames = {
+    freeShipment : 'Free Shipment 72h',
+    extraShipment : 'Extra Shipment 48h',
+    premiumShipment: 'Premium Shipment 24h'
+};
+var shippingMethodPrices = {
+    freeShipment : 0,
+    extraShipment : 5,
+    premiumShipment: 10
+};
 
 function changeGalleryImages(selectedProductColor) {
     let bigImage = document.getElementById('bigImage');
@@ -28,8 +54,15 @@ function changeGalleryImages(selectedProductColor) {
     miniBack.src = `images/back/${selectedProductColor}.jpg`;
 }
 
+function updatePrice() {
+    selectedProductPrice = colorPrices[selectedColor];
+    document.getElementById('displayedPrice').innerHTML = `${selectedProductPrice}€`;
+}
+
 function changeImagesColor(event) {
     let selectedColorSelector = event.target;
+    selectedColor = selectedColorSelector.value;
+    updatePrice();
     let selectedProductColor = selectedColorSelector.getAttribute('data-image');
     var activeColorSelector = document.querySelector('.colorProduct input[type="radio"]:checked');
     activeColorSelector.toggleAttribute('checked');
@@ -58,8 +91,10 @@ miniImages.forEach((miniImage) => {
 });
 
 function finishPurchase() {
+    var diff = Math.abs(new Date() - registrationStart);
+    var date = new Date(diff);
     let bottomSection = document.getElementById('bottom_section');
-    bottomSection.innerHTML = 'Your registration took: xx min and yy sec';
+    bottomSection.innerHTML = 'Your registration took: ' + date.getMinutes() + ' min and ' + date.getSeconds() + ' sec';
 
     let topSection = document.getElementById('top_section');
     let orderCongratsTemplateContent = document.getElementById('orderCongrats').content;
@@ -67,7 +102,17 @@ function finishPurchase() {
     topSection.style.marginBottom = "20px";
 };
 
+function setDeliveryOptionsDisplaying() {
+    document.getElementById('tshirtPrice').innerHTML = `${selectedProductPrice}€`;
+    document.getElementById('selectedShipping').innerHTML = `${shippingMethodNames[selectedShippingMethod]}`;
+    document.getElementById('selectedShippingCost').innerHTML = `${shippingMethodPrices[selectedShippingMethod]}€`;
+    document.getElementById('totalAmount').innerHTML = `${selectedProductPrice + shippingMethodPrices[selectedShippingMethod]}€`;
+    document.getElementById('finishFirstDate').innerHTML = `${soonestDeliveryDateTime}`;
+    document.getElementById('finishLastDate').innerHTML = `${latestDeliveryDateTime}`;
+}
+
 function goToFinishPage() {
+
     let rightSection = document.getElementById('right_section');
     rightSection.innerHTML = "";
 
@@ -80,6 +125,8 @@ function goToFinishPage() {
     let rightTemplateContent = rightTemplate.content;
     rightSection.appendChild(rightTemplateContent);
 
+    setDeliveryOptionsDisplaying();
+
     const scriptFinish = document.createElement('script');
     scriptFinish.src = './finishControl.js';
     document.head.append(scriptFinish)
@@ -88,6 +135,7 @@ function goToFinishPage() {
     form.addEventListener("submit", function (event) {
         event.preventDefault();
         if(termsCheckbox.checked){
+            nextStage();
             finishPurchase();
             currentActive++;
             if (currentActive > circles.length) currentActive = circles.length;
@@ -105,8 +153,8 @@ function goToFinishPage() {
 
 };
 
-
 function goToShippingPage() {
+    areAllFieldsValidated = false;
     let rightSection = document.getElementById('right_section');
     rightSection.innerHTML="";
 
@@ -124,13 +172,27 @@ function goToShippingPage() {
     var form = document.getElementById('shippingForm');
     form.addEventListener("submit", function (event) {
         event.preventDefault();
+        if (areAllFieldsValidated){
+        selectedShippingMethod = event.target.shipment.value;
         goToFinishPage();
+        nextStage();
+        }
     });
 };
 
+function allAddressFieldsValidated () {
+    areAllFieldsValidated = true;
+    let allInputs = document.querySelectorAll('.addressPage > div > input');
+    allInputs.forEach((input) => {
+        if (input.getAttribute("validated-field") === 'false') {
+            areAllFieldsValidated = false;
+        }
+    });
+    return areAllFieldsValidated;
+}
+
 function goToAddressPage() {
     let rightSection = document.getElementById('right_section');
-    //rightSection.removeChild(rightSection.firstElementChild);
     rightSection.innerHTML="";
 
     let rightTemplate = document.getElementById('addressPage');
@@ -147,7 +209,10 @@ function goToAddressPage() {
     var form = document.getElementById('addressForm');
     form.addEventListener("submit", function (event) {
         event.preventDefault();
-        goToShippingPage()
+        if (allAddressFieldsValidated()) {
+            nextStage();
+            goToShippingPage()
+        }
     });
 };
 
@@ -184,9 +249,31 @@ function initializeRegistrationProcess(){
     initializeMinuteAlert();
 };
 
+function updateSelectedSize() {
+    selectedProductSize = document.getElementById('sizeChoosing').value;
+}
+
+function updateShoppingCart() {
+    document.getElementById('ShoppingCartSizeDisplay').innerHTML = selectedProductSize;
+    document.getElementById('ShoppingCartPriceDisplay').innerHTML = `${selectedProductPrice}€`;
+    document.getElementById('ShoppingCartColorDisplay').style.backgroundColor = colorPalette[selectedColor];
+    document.getElementById('cartImage').src = `images/front/${selectedColor}.jpg`;
+}
+
+function allProfileFieldsValidated () {
+    areAllFieldsValidated = true;
+    let allInputs = document.querySelectorAll('.profilePage > div > input');
+    allInputs.forEach((input) => {
+        if (input.getAttribute("validated-field") === 'false') {
+            areAllFieldsValidated = false;
+        }
+    });
+    return areAllFieldsValidated;
+}
+
 function goToProfilePage() {
     initializeRegistrationProcess();
-    
+    updateSelectedSize();
     let leftSection = document.getElementById('left_section');
     leftSection.innerHTML="";
     let rightSection = document.getElementById('right_section');
@@ -208,6 +295,8 @@ function goToProfilePage() {
     bottomTemplateContent = bottomTemplate.content;
     document.getElementById('bottom_section').appendChild(bottomTemplateContent);
 
+    updateShoppingCart();
+
     document.getElementById('clear').setAttribute('form', 'profileForm');
     document.getElementById('next').setAttribute('form', 'profileForm');
 
@@ -222,6 +311,9 @@ function goToProfilePage() {
     var form = document.getElementById('profileForm');
     form.addEventListener("submit", function (event) {
         event.preventDefault();
-        goToAddressPage();
+        if (allProfileFieldsValidated()) {
+            nextStage();
+            goToAddressPage();
+        }
     });
 };

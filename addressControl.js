@@ -1,6 +1,3 @@
-
-// ----->>> addressPage <<<-----
-
 //FUNCION FIRSTNAME
 var firstNameField = document.getElementById("firstName");
 var firstNameAlert = document.getElementById("firstNameAlert");
@@ -8,9 +5,9 @@ firstNameField.oninput = hasValidFirstName;
 function hasValidFirstName(event) {
     if(event.target.value.length>20){
         firstNameAlert.style.display="block";
-        event.target.style.borderColor="tomato";
+        event.target.setAttribute("validated-field", false);
     }else{
-        event.target.style.borderColor="green";//cambiar por un tic en verde en CSS que le quite el hidden aquí
+        event.target.setAttribute("validated-field", true);
         firstNameAlert.style.display="none";
     }
 }
@@ -22,9 +19,9 @@ lastNameField.oninput = hasValidLastName;
 function hasValidLastName(event) {
     if(event.target.value.length>20){
         lastNameAlert.style.display="block";
-        event.target.style.borderColor="tomato";
+        event.target.setAttribute("validated-field", false);
     }else{
-        event.target.style.borderColor="green";//cambiar por un tic en verde en CSS que le quite el hidden aquí
+        event.target.setAttribute("validated-field", true);
         lastNameAlert.style.display="none";
     }
 }
@@ -36,9 +33,9 @@ address1Field.oninput = hasValidAdress1;
 function hasValidAdress1(event) {
     if(event.target.value.length>50){
         address1Alert.style.display="block";
-        event.target.style.borderColor="tomato";
+        event.target.setAttribute("validated-field", false);
     }else{
-        event.target.style.borderColor="green";//cambiar por un tic en verde en CSS que le quite el hidden aquí
+        event.target.setAttribute("validated-field", true);
         address1Alert.style.display="none";
     }
 }
@@ -50,15 +47,14 @@ address2Field.oninput = hasValidAdress2;
 function hasValidAdress2(event) {
     if(event.target.value.length>50){
         address2Alert.style.display="block";
-        event.target.style.borderColor="tomato";
+        event.target.setAttribute("validated-field", false);
     }else{
-        event.target.style.borderColor="green";//cambiar por un tic en verde en CSS que le quite el hidden aquí
+        event.target.setAttribute("validated-field", true);
         address2Alert.style.display="none";
     }
 }
 
-
-//FUNCION POST CODE 
+//FUNCION POST CODE
 var postCodeField = document.getElementById("postCode");
 var postCodeAlert1 = document.getElementById("postCodeAlert1");
 var postCodeAlert2 = document.getElementById("postCodeAlert2");
@@ -72,22 +68,21 @@ function hasValidPostCode() {
             postCodeField.style.borderColor='';
         }else{
             if((postCodeField.value.length>4 && postCodeField.value.length<6)){
-                postCodeField.style.borderColor="green";//cambiar por un tic en verde en CSS que le quite el hidden aquí
+                postCodeField.setAttribute("validated-field", true);
                 postCodeAlert1.style.display="none";
                 postCodeAlert2.style.display="none";
-            }else{ 
+            }else{
                 postCodeAlert2.style.display="block";
-                postCodeField.style.borderColor="tomato";
+                postCodeField.setAttribute("validated-field", false);
                 postCodeAlert1.style.display="none";
             }
         }
     }else{
             postCodeAlert1.style.display="block";
-            postCodeField.style.borderColor="tomato";
+            postCodeField.setAttribute("validated-field", false);
             postCodeAlert2.style.display="none";
-    } 
+    }
 }
-
 
    //FUNCION COUNTRY
     var countryField = document.getElementById("countries");
@@ -95,21 +90,10 @@ function hasValidPostCode() {
     countryField.oninput=setDefaultPrefix;
     var lastSelectedCountry='0';
     function setDefaultPrefix(event) {
-
         countryPrefix[event.target.value].setAttribute("selected", "selected");
-        console.log('Añadimos este prefijo ');
-        console.log(countryPrefix[event.target.value]);
-
         countryPrefix[lastSelectedCountry].removeAttribute("selected");
-        console.log('Quitamos este prefiejo ' );
-        console.log(countryPrefix[lastSelectedCountry]);
-
         lastSelectedCountry=event.target.value;
-        console.log(lastSelectedCountry);
-
     }
-
-
 
     //FUNCION PHONE
     var phoneField = document.getElementById("phone");
@@ -125,17 +109,17 @@ function hasValidPostCode() {
         } else {
             if(phoneField.value.match(filterPhoneCode)){
                 if((phoneField.value.length===9)){
-                    phoneField.style.borderColor="green";//cambiar por un tic en verde en CSS que le quite el hidden aquí
+                    phoneField.setAttribute("validated-field", true);
                     phoneAlert1.style.display="none";
                     phoneAlert2.style.display="none";
                 }else{
                     phoneAlert2.style.display="block";
-                    phoneField.style.borderColor="tomato";
+                    phoneField.setAttribute("validated-field", false);
                     phoneAlert1.style.display="none";
                 }
             }else{
                     phoneAlert1.style.display="block";
-                    phoneField.style.borderColor="tomato";
+                    phoneField.setAttribute("validated-field", false);
                     phoneAlert2.style.display="none";
             }
         }

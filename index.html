@@ -66,7 +66,7 @@
     <template id="productDescription">
         <div class="productDescription">
             <h1>Basic Black</h1><br>
-            <p>Price: <span>12€</span></p>
+            <p>Price: <span id="displayedPrice">12€</span></p>
             <div class="product-color">
                 <p>Choose your color:</p>
                 <div class="colorProduct">
@@ -86,12 +86,12 @@
             </div>
             <div class="cable-config">
                 <p>Size:</p>
-                <select name="sizeChoosing" id="">
-                    <option value="">XS</option>
-                    <option value="">S</option>
-                    <option value="">M</option>
-                    <option value="">L</option>
-                    <option value="">XL</option>
+                <select id="sizeChoosing" name="sizeChoosing">
+                    <option value="XS">XS</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
                 </select>
             </div>
             <input type="submit" id="buyNowButton" value="BUY">
@@ -104,17 +104,17 @@
             <hr />
         </div>
         <div class="shoppingCart">
-            <div class="cartImage"><img src='./images/front/black.jpg'></div>
+            <div class="cartImage"><img id="cartImage" src='./images/front/black.jpg'></div>
             <div class="cartDetails">
                 <h1>Basic t-shirt</h1>
                 <p>Size
-                <div>M</div>
+                <div id="ShoppingCartSizeDisplay">M</div>
                 </p>
                 <p>Color
-                <div>tomato</div>
+                <div id="ShoppingCartColorDisplay"></div>
                 </p>
                 <p>Price:
-                <div>15€</div>
+                <div id="ShoppingCartPriceDisplay">15€</div>
                 </p>
             </div>
         </div>
@@ -125,23 +125,23 @@
             <p>User profile information</p>
             <hr />
         </div>
-        <form action="" id="profileForm" class="mainProductContent">
+        <form action="" id="profileForm" class="mainProductContent profilePage">
             <div>
                 <label for="username">Username:</label><br>
-                <input type="text" name="username" id="username" value="">
+                <input type="text" name="username" id="username" value="" validated-field=false>
                 <p id="userNameAlert" class="inputError">El username no debe contener espacios y debe tener
                     una longitud comprendida entre 5 y 20 carácteres</p><br><br>
                 <label for="email">Email:</label><br>
-                <input type="email" name="email" id="email" value="">
+                <input type="email" name="email" id="email" value="" validated-field=false>
                 <p id="emailAlert" class="inputError">No es un email válido</p><br><br>
             </div>
             <div>
                 <label for="password">Password:</label><br>
-                <input type="password" name="password" id="password" value="">
+                <input type="password" name="password" id="password" value="" validated-field=false>
                 <p id="passAlert" class="inputError">La contraseña debe contener mayúsculas, minúsculas,
                     números y caracteres especiales</p><br><br>
                 <label for="confirmPassword">Confirm password:</label><br>
-                <input type="password" name="confirmPassword" id="confirmPassword" value="">
+                <input type="password" name="confirmPassword" id="confirmPassword" value="" validated-field=false>
                 <p id="confirmPassAlert" class="inputError">Las contraseñas no coinciden</p><br><br>
             </div>
         </form>
@@ -152,32 +152,32 @@
             <p>User address information</p>
             <hr />
         </div>
-        <form action="" id="addressForm" class="mainProductContent">
+        <form action="" id="addressForm" class="mainProductContent addressPage">
             <div>
                 <label for="firstName">First Name:</label><br>
-                <input type="text" name="firstName" id="firstName" value=""><br>
-                <p id="firstNameAlert" style="display:none;color:red">La longitud no puede ser mayor de 20 carácteres
+                <input type="text" name="firstName" id="firstName" value="" validated-field=false><br>
+                <p id="firstNameAlert" class="inputError">La longitud no puede ser mayor de 20 carácteres
                 </p><br>
                 <label for="lastName">Last Name:</label><br>
-                <input type="text" name="lastName" id="lastName" value=""><br>
-                <p id="lastNameAlert" style="display:none;color:red">La longitud no puede ser mayor de 20 carácteres</p>
+                <input type="text" name="lastName" id="lastName" value="" validated-field=false><br>
+                <p id="lastNameAlert" class="inputError">La longitud no puede ser mayor de 20 carácteres</p>
                 <br>
                 <label for="birthday">Birthday:</label><br>
-                <input type="date" name="birthday" id="birthday" value=""><br>
-                <p id="birthdayAlert" style="display:none;color:red">Aviso fecha incorrecta (?)</p><br>
+                <input type="date" name="birthday" id="birthday" value="" validated-field=true><br>
+                <p id="birthdayAlert" class="inputError">Aviso fecha incorrecta (?)</p><br>
                 <label for="postCode">Post Code:</label><br>
-                <input type="text" name="postCode" id="postCode" value=""><br>
-                <p id="postCodeAlert1" style="display:none;color:red">Deben ser valores numéricos</p>
-                <p id="postCodeAlert2" style="display:none;color:red">La longitud debe ser igual a 5 cifras</p><br>
+                <input type="text" name="postCode" id="postCode" value="" validated-field=false><br>
+                <p id="postCodeAlert1" class="inputError">Deben ser valores numéricos</p>
+                <p id="postCodeAlert2" class="inputError">La longitud debe ser igual a 5 cifras</p><br>
             </div>
             <div>
                 <label for="address1">Address 1:</label><br>
-                <input type="text" name="address1" id="address1" value=""><br>
-                <p id="address1Alert" style="display:none;color:red">La longitud no puede ser mayor de 50 carácteres</p>
+                <input type="text" name="address1" id="address1" value="" validated-field=false maxlength="50"><br>
+                <p id="address1Alert" class="inputError">La longitud no puede ser mayor de 50 carácteres</p>
                 <br>
                 <label for="address2">Address 2:</label><br>
-                <input type="text" name="address2" id="address2" value=""><br>
-                <p id="address2Alert" style="display:none;color:red">La longitud no puede ser mayor de 50 carácteres</p>
+                <input type="text" name="address2" id="address2" value="" validated-field=true maxlength="50"><br>
+                <p id="address2Alert" class="inputError">La longitud no puede ser mayor de 50 carácteres</p>
                 <br>
                 <label>Country:</label><br>
                 <select id="countries" class="selectStyle">
@@ -195,11 +195,11 @@
                     <option value="+49">DEU</option>
                     <option value="+30">GRC</option>
                 </select><br>
-                <input type="tel" name="phone" id="phone" value="">
-                <p id="phoneAlert1" style="display:none;color:red">Deben ser valores numéricos</p>
-                <p id="phoneAlert2" style="display:none;color:red">Debe tener 9 cifras</p><br>
+                <input type="tel" name="phone" id="phone" value="" validated-field=false>
+                <p id="phoneAlert1" class="inputError">Deben ser valores numéricos</p>
+                <p id="phoneAlert2" class="inputError">Debe tener 9 cifras</p><br>
                 <input class="checkboxInput" type="checkbox" id="checkAddress" name="checkAddress"
-                    value="acceptAddress">
+                    value="acceptAddress" validated-field=true>
                 <label class="labelCheckbox" for="checkAddress">This is my regular address.</label><br>
             </div>
         </form>
@@ -222,7 +222,7 @@
             <div class="estimatedDeliveryDate" id="timeDeliver" style="visibility:hidden;">
                 <h4><strong>Your order will arrive:</strong></h4>
                 <p>Estimated delivery date</p>
-                <p>Between <strong id="firstDate"></strong> and <strong id="lastDate"></strong></p>
+                <p>Between <strong id="shippingFirstDate"></strong> and <strong id="shippingLastDate"></strong></p>
             </div>
             <label><input type="checkbox" class="checkboxInput" id="isAGift" name="isAGift" value="isAGift">Is it a
                 gift?</label>
@@ -256,7 +256,7 @@
             <p>Total:<div id="totalAmount">`${totalAmount}`</div></p><br>
             <p><strong>Your order will arrive:</strong></p>
             <p>Estimated delivery date</p>
-            <p>Between <strong id="firstDate">`${soonerEstimatedDate}`</strong> and <strong id="lastDate">`${laterEstimatedDate}`</strong></p><br>
+            <p>Between <strong id="finishFirstDate">`${soonerEstimatedDate}`</strong> and <strong id="finishLastDate">`${laterEstimatedDate}`</strong></p><br>
             <form action="" id="finishForm">
                 <input type="checkbox" id="termsCheckbox" name="termsCheckbox" value="0">
                 <label>I have read and accept the terms and conditions</label>

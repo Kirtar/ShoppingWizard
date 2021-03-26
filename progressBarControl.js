@@ -4,7 +4,7 @@ var circles = document.querySelectorAll(".circle");
 let progressStage = 0;
 let currentActive = 1;
 
-next.addEventListener("click", () => {
+function nextStage() {
   currentActive++;
   if (currentActive > circles.length) currentActive = circles.length;
   if (currentActive !== 4 || progressStage == 1) {
@@ -12,7 +12,7 @@ next.addEventListener("click", () => {
   } else if (currentActive == 4){
     progressStage++;
   }
-});
+};
 
 const update = () => {
   circles.forEach((circle, index) => {

@@ -11,6 +11,9 @@
   --basicBlue: #3498db;
   --basicGrey: #e0e0e0;
   --lightBlue: #d0e8ff;
+  --redProductColor: #dd473c;
+  --blueProductColor: #6b9ed4;
+  --blackProductColor: #323232;
 }
 
 textarea {
@@ -45,22 +48,6 @@ select {
   width: 20px;
   height: 20px;
   border-radius: 20px 20px 20px 20px;
-}
-
-#product1 {
-  background-color: #d4c118;
-}
-#product2 {
-  background-color: #189fd4;
-}
-#product3 {
-  background-color: #9f18d4;
-}
-#product4 {
-  background-color: #d41821;
-}
-#product5 {
-  background-color: #18d421;
 }
 
 #buyNowButton,
@@ -188,7 +175,6 @@ body > main > section > aside {
 }
 .ProductContent > div > div {
   width: 70px;
-  /* padding: 4%; */
 }
 
 .productGallery {
@@ -204,7 +190,6 @@ body > main > section > aside {
 }
 .productGallery > div > div {
   width: 70px;
-  /* padding: 4%; */
 }
 
 .imgMini {
@@ -239,7 +224,7 @@ body > main > section > aside {
 }
 
 .progress-container::before {
-  content: ""; /* Mandatory with ::before */
+  content: "";
   background-color: var(--basicGrey);
   position: absolute;
   top: 50%;
@@ -473,17 +458,23 @@ div.shoppingCart > div {
 }
 
 .colorProduct input[type="radio"]#red + label span {
-  background-color: #c91524;
+  background-color: var(--redProductColor);
 }
 .colorProduct input[type="radio"]#blue + label span {
-  background-color: #4d61b9;
+  background-color: var(--blueProductColor);
 }
 .colorProduct input[type="radio"]#black + label span {
-  background-color: #323232;
+  background-color: var(--blackProductColor);
 }
 
 .colorProduct input[type="radio"]:checked + label span {
   background-image: url(images/check-icn.svg);
   background-repeat: no-repeat;
   background-position: center;
+}
+
+#ShoppingCartColorDisplay {
+  width: 60px;
+  height: 10px;
+  border-radius: 4px;
 }
